@@ -1,0 +1,5 @@
+Question ID,Question,Expected Answer Keywords,Actual Response,Top Retrieved Source,Retrieval Score,Retrieval Latency (s),Generation Latency (s),Total Latency (s),Evaluation Status (PASS/FAIL),Notes/Observations
+q1,What is SafeX Solutions?,"SafeX, internship, solutions",,,0.0,0.0,0.0,0.0,PENDING,
+q2,Who is the founder of SafeX Solutions?,Ateeq Ullah,,,0.0,0.0,0.0,0.0,PENDING,
+q3,What benefits are offered in the AI/ML internship?,"real-world projects, mentorship, certificate, future opportunities",,,0.0,0.0,0.0,0.0,PENDING,
+q4,What is the monthly stipend for Group 54 interns?,I am sorry but I do not have information,,,0.0,0.0,0.0,0.0,PENDING,

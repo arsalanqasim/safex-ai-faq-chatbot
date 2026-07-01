@@ -1,0 +1,17 @@
+# ==============================================================================
+# SafeX AI Knowledge Assistant - Python Package Requirements
+# ==============================================================================
+
+# Core RAG App and UI
+streamlit>=1.35.0
+
+# LLM & Embeddings Provider (Google Gemini API)
+google-generativeai>=0.5.4
+
+# Configuration and Utilities
+python-dotenv>=1.0.1
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Testing and Code Verification
+pytest>=7.4.0

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "q1",
+    "category": "positive",
+    "question": "What is SafeX Solutions?",
+    "expected_keywords": ["SafeX", "internship", "solutions"],
+    "source_reference": "internship_offer_letter.pdf"
+  },
+  {
+    "id": "q2",
+    "category": "positive",
+    "question": "Who is the founder of SafeX Solutions?",
+    "expected_keywords": ["Ateeq Ullah"],
+    "source_reference": "internship_offer_letter.pdf"
+  },
+  {
+    "id": "q3",
+    "category": "positive",
+    "question": "What benefits are offered in the AI/ML internship?",
+    "expected_keywords": ["real-world projects", "mentorship", "certificate", "future opportunities"],
+    "source_reference": "internship_offer_letter.pdf"
+  },
+  {
+    "id": "q4",
+    "category": "negative",
+    "question": "What is the monthly stipend for Group 54 interns?",
+    "expected_keywords": ["I am sorry, but I do not have information"],
+    "source_reference": "None (Should trigger no-information fallback)"
+  }
+]
