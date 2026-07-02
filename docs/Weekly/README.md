@@ -15,7 +15,7 @@ As Group Leader (Arsalan Qasim):
 - Read the **Section 5 (Summary for Group Leader)** of each intern's report.
 - Compile a consolidated weekly summary listing:
   - High-level achievements.
-  - Development tracks progress (Ingestion, Web-UI, RAG modeling, Testing).
+  - Development tracks progress (KB Loading, Web-UI, Similarity engine, Testing).
   - Consolidated blockers (if any).
 - Save the consolidated report as `Week_[X]_Consolidated_Summary.md` in this folder.
 - Send the summary to your Team Lead by Friday afternoon.

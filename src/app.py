@@ -1,230 +1,241 @@
 # ==============================================================================
-# SafeX AI Knowledge Assistant - Streamlit Application Interface
+# SafeX AI FAQ Chatbot - Streamlit Dashboard Interface
 # ==============================================================================
 import os
 import sys
 from pathlib import Path
 import streamlit as st
 
-# Setup python path to import from 'src' correctly
+# Ensure root directory is on python path for clean imports
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
-from src.config.settings import (
-    VECTOR_STORE_DIR, 
-    RAW_DATA_DIR, 
-    GEMINI_API_KEY, 
-    logger
-)
-from src.chatbot import RAGAssistant
-from src.pipeline.vector_store import build_and_save_index
+from src.config import FAQ_PATH, APP_TITLE, APP_SUBTITLE
+from src.chatbot import FAQChatbot
 
-# Page Styling and Page Config
+# Configure Streamlit page layout and theme properties
 st.set_page_config(
-    page_title="SafeX AI Knowledge Assistant",
-    page_icon="🤖",
+    page_title="SafeX FAQ Chatbot Dashboard",
+    page_icon="🛡️",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# Custom Premium CSS Styling for SafeX Branding
+# Custom Premium styling for a cohesive dashboard look
 st.markdown("""
 <style>
     /* Gradient headers and brand consistency */
     .main-header {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
         background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         font-weight: 800;
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.1rem;
     }
     .sub-header {
-        font-size: 1.1rem;
-        color: #4B5563;
-        margin-bottom: 2rem;
+        font-size: 1.05rem;
+        color: #6B7280;
+        margin-bottom: 1.5rem;
     }
-    /* Source chunk formatting */
-    .source-card {
-        background-color: #F3F4F6;
-        border-left: 5px solid #3B82F6;
+    /* Metric Cards */
+    .metric-card {
+        background-color: #F8FAFC;
+        border: 1px solid #E2E8F0;
+        border-radius: 0.5rem;
         padding: 1rem;
-        border-radius: 0.375rem;
         margin-bottom: 1rem;
     }
-    .source-meta {
+    .metric-label {
+        font-size: 0.85rem;
+        color: #64748B;
+        text-transform: uppercase;
         font-weight: 600;
-        color: #1F2937;
-        margin-bottom: 0.5rem;
-        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
     }
-    .source-score {
-        background-color: #DBEAFE;
-        color: #1E40AF;
-        padding: 0.1rem 0.4rem;
-        border-radius: 0.25rem;
-        font-size: 0.8rem;
-        font-weight: bold;
+    .metric-value {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #1E293B;
+    }
+    /* Chatbot response card */
+    .response-card {
+        background-color: #F1F5F9;
+        border-left: 6px solid #2563EB;
+        padding: 1.25rem;
+        border-radius: 0.375rem;
+        margin-bottom: 1.5rem;
+    }
+    .response-header {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #1E3A8A;
+        margin-bottom: 0.5rem;
+    }
+    .response-text {
+        font-size: 1.1rem;
+        color: #0F172A;
+        line-height: 1.5;
     }
 </style>
 """, unsafe_allow_html=True)
 
 # ------------------------------------------------------------------------------
-# State Initialization
+# Session State & Model Initialization
 # ------------------------------------------------------------------------------
-logger.info("Initializing Streamlit Application Session...")
-
-# Path to the compiled vector index file
-INDEX_FILE_PATH = VECTOR_STORE_DIR / "vector_index.pkl"
-
-# Initialize RAG Assistant (cached in Streamlit session state)
-if "rag_assistant" not in st.session_state:
-    st.session_state.rag_assistant = RAGAssistant(INDEX_FILE_PATH, provider_type="gemini")
-
-# Chat message history
-if "messages" not in st.session_state:
-    st.session_state.messages = []
+if "chatbot" not in st.session_state:
+    try:
+        st.session_state.chatbot = FAQChatbot(FAQ_PATH)
+        st.session_state.kb_status = "Loaded Successfully"
+    except Exception as e:
+        st.session_state.chatbot = None
+        st.session_state.kb_status = f"Initialization Error: {e}"
 
 # ------------------------------------------------------------------------------
-# Sidebar - Brand, Settings & Team Details
+# Sidebar - Branding, Settings, Team & Task Distribution
 # ------------------------------------------------------------------------------
 with st.sidebar:
-    st.image("https://img.icons8.com/color/96/artificial-intelligence.png", width=70)
+    st.image("https://img.icons8.com/color/96/shield.png", width=65)
     st.markdown("### SafeX Solutions")
-    st.markdown("AI/ML Internship Project")
+    st.caption("Week 1 AI/ML Internship Prototype")
     st.divider()
+
+    st.markdown("#### Model Settings")
     
-    # Credentials Status check
-    st.markdown("#### System Configuration")
-    if GEMINI_API_KEY and GEMINI_API_KEY != "your_gemini_api_key_here":
-        st.success("API Credentials: **Gemini Connected**")
+    # Dynamic Similarity Threshold slider
+    threshold_val = st.slider(
+        "Similarity Threshold",
+        min_value=0.0,
+        max_value=1.0,
+        value=0.35,
+        step=0.05,
+        help="Queries scoring below this threshold will return the fallback message."
+    )
+    
+    st.divider()
+
+    # Knowledge Base Status
+    st.markdown("#### System Integrity")
+    if st.session_state.chatbot is not None:
+        st.success(f"FAQ KB: **{len(st.session_state.chatbot.faqs)} Items Loaded**")
     else:
-        st.warning("API Credentials: **Mock/Offline Mode**")
-        st.caption("Please configure `GEMINI_API_KEY` in your `.env` to execute live API calls.")
+        st.error(f"FAQ KB: **{st.session_state.kb_status}**")
         
     st.divider()
 
-    # Re-indexing operations for Interns to refresh dataset
-    st.markdown("#### Database Administration")
-    if st.button("🔄 Build/Refresh Vector Index", use_container_width=True):
-        with st.spinner("Processing documents, cleaning, and creating embeddings..."):
-            try:
-                logger.info("Triggering vector index rebuild from UI.")
-                build_and_save_index(RAW_DATA_DIR, INDEX_FILE_PATH, provider_type="gemini")
-                
-                # Reload assistant with updated database
-                st.session_state.rag_assistant = RAGAssistant(INDEX_FILE_PATH, provider_type="gemini")
-                st.success("Vector Database refreshed successfully!")
-            except Exception as e:
-                logger.error(f"Failed to refresh index from UI: {e}")
-                st.error(f"Error rebuilding index: {e}")
-                
-    st.caption("Runs ingestion pipeline (`load` -> `clean` -> `chunk` -> `embed` -> `index` -> `save`) on local raw data files.")
+    # Internship Team & Task Distribution (Group 54)
+    st.markdown("#### Team & Tasks Distribution")
+    st.markdown("**Group Leader:**\n- **Arsalan Qasim** (Project Lead, Github/Release Mgr)")
     
-    st.divider()
-
-    # Internship Team Metadata (Group 54)
-    st.markdown("#### Group 54 Roster")
-    st.markdown("**Group Leader:**\n- **Arsalan Qasim** (AI/ML Intern)")
-    
-    with st.expander("Team Members (7)", expanded=False):
+    with st.expander("Cohort Members (7) & Modules", expanded=False):
         st.markdown("""
-        - **MUHAMMAD WASIM**
-          *(AI, Data Science, ML)*
-        - **Muhammed Faizan Mujtaba**
-          *(AI/ML)*
+        - **Muhammad Wasim**
+          *(Similarity matching model)*
+        - **Muhammad Faozan Mujtaba**
+          *(Knowledge base preparation)*
         - **Shahidullah**
-          *(Web Dev, AI/ML)*
+          *(Streamlit dashboard UI)*
         - **Ali Ammar Haider**
-          *(Data Analytics, BI)*
+          *(Backend integration & configs)*
         - **Abdul Haseeb**
-          *(AI/ML)*
+          *(Unit tests / QA engineer)*
         - **Hammad Abbas**
-          *(Data Analysis, Data Science)*
+          *(Evaluation runs & reporting)*
         - **Ali Zaib**
-          *(AI/ML)*
+          *(Technical documentation)*
         """)
-
-# ------------------------------------------------------------------------------
-# Main Page Header
-# ------------------------------------------------------------------------------
-st.markdown('<div class="main-header">SafeX AI Knowledge Assistant</div>', unsafe_allow_html=True)
-st.markdown('<div class="sub-header">RAG-driven retrieval assistant answering questions using indexed internal documents.</div>', unsafe_allow_html=True)
-
-# ------------------------------------------------------------------------------
-# Conversation Feed
-# ------------------------------------------------------------------------------
-# Render existing messages
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.write(message["content"])
-        # If there are sources attached, render them
-        if "sources" in message and message["sources"]:
-            with st.expander("🔍 View References"):
-                for idx, src in enumerate(message["sources"]):
-                    st.markdown(f"""
-                    <div class="source-card">
-                        <div class="source-meta">
-                            Reference #{idx+1}: <code>{src['source']}</code> ({src['type'].upper()}) 
-                            <span class="source-score">Relevance: {src['score']:.2f}</span>
-                        </div>
-                        <div style="font-size:0.875rem; color:#374151;">
-                            <i>"{src['text'].strip()}"</i>
-                        </div>
-                    </div>
-                    """, unsafe_allow_html=True)
-
-# ------------------------------------------------------------------------------
-# Chat Input & RAG Execution
-# ------------------------------------------------------------------------------
-if user_query := st.chat_input("Ask a question about SafeX Solutions..."):
-    # Display user message
-    st.session_state.messages.append({"role": "user", "content": user_query})
-    with st.chat_message("user"):
-        st.write(user_query)
         
-    # Generate response
-    with st.chat_message("assistant"):
-        with st.spinner("Searching knowledge base and formulating response..."):
-            logger.info(f"Querying assistant from UI: {user_query}")
-            try:
-                response = st.session_state.rag_assistant.query(user_query)
-                answer = response["answer"]
-                sources = response["sources"]
-                latency = response["latency"]
-                
-                # Write answer
-                st.write(answer)
-                
-                # Render sources
-                if sources:
-                    with st.expander("🔍 View References"):
-                        for idx, src in enumerate(sources):
-                            st.markdown(f"""
-                            <div class="source-card">
-                                <div class="source-meta">
-                                    Reference #{idx+1}: <code>{src['source']}</code> ({src['type'].upper()}) 
-                                    <span class="source-score">Relevance: {src['score']:.2f}</span>
-                                </div>
-                                <div style="font-size:0.875rem; color:#374151;">
-                                    <i>"{src['text'].strip()}"</i>
-                                </div>
-                            </div>
-                            """, unsafe_allow_html=True)
-                            
-                    # Display response latency details in page sub-caption
-                    st.caption(f"Latency: Retrieval **{latency['retrieval_seconds']:.3f}s** | Generation **{latency['generation_seconds']:.3f}s** | Total **{latency['total_seconds']:.3f}s**")
-                else:
-                    st.caption(f"Latency: Retrieval **{latency['retrieval_seconds']:.3f}s** | Generation **{latency['generation_seconds']:.3f}s** | Total **{latency['total_seconds']:.3f}s** (No references found)")
+# ------------------------------------------------------------------------------
+# Main Dashboard Panel
+# ------------------------------------------------------------------------------
+st.markdown(f'<div class="main-header">{APP_TITLE}</div>', unsafe_allow_html=True)
+st.markdown(f'<div class="sub-header">{APP_SUBTITLE} — Internal query verification dashboard.</div>', unsafe_allow_html=True)
 
-                # Save assistant message to state
-                st.session_state.messages.append({
-                    "role": "assistant", 
-                    "content": answer,
-                    "sources": sources
-                })
-                
-            except Exception as e:
-                logger.error(f"UI query execution failed: {e}")
-                err_msg = f"Sorry, an internal error occurred: {e}. Please check the system logs."
-                st.error(err_msg)
-                st.session_state.messages.append({"role": "assistant", "content": err_msg})
+# Layout: Form on top, details on bottom
+if st.session_state.chatbot is None:
+    st.error("Cannot run dashboard. The knowledge base is missing or corrupt. Check data/faq.json.")
+else:
+    # Query Form Section
+    with st.container():
+        st.subheader("Query the Knowledge Base")
+        with st.form(key="query_form", clear_on_submit=False):
+            col_in, col_btn = st.columns([5, 1])
+            with col_in:
+                user_input = st.text_input(
+                    label="Enter your internal question about SafeX Solutions...",
+                    placeholder="e.g., Who is the founder of SafeX Solutions?",
+                    label_visibility="collapsed"
+                )
+            with col_btn:
+                submit_button = st.form_submit_button(
+                    label="🔍 Find Answer",
+                    use_container_width=True
+                )
+
+    st.divider()
+
+    # Process and display result
+    if submit_button and user_input.strip():
+        # Query Chatbot
+        result = st.session_state.chatbot.query(user_input, threshold=threshold_val)
+        
+        # Display response
+        st.subheader("Response Output")
+        
+        # Determine container styling based on fallback trigger
+        if result["is_fallback"]:
+            st.warning(result["answer"])
+        else:
+            st.markdown(f"""
+            <div class="response-card">
+                <div class="response-header">🛡️ VERIFIED FAQ RESPONSE</div>
+                <div class="response-text">{result["answer"]}</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+        # Matched FAQ & Algorithmic Scores
+        st.subheader("Algorithmic Matching Analysis")
+        
+        col_m1, col_m2, col_m3 = st.columns(3)
+        with col_m1:
+            st.markdown(f"""
+            <div class="metric-card">
+                <div class="metric-label">Similarity Score</div>
+                <div class="metric-value">{result["similarity_score"]:.4f}</div>
+            </div>
+            """, unsafe_allow_html=True)
+        with col_m2:
+            st.markdown(f"""
+            <div class="metric-card">
+                <div class="metric-label">Execution Latency</div>
+                <div class="metric-value">{result["latency_seconds"]*1000:.2f} ms</div>
+            </div>
+            """, unsafe_allow_html=True)
+        with col_m3:
+            st.markdown(f"""
+            <div class="metric-card">
+                <div class="metric-label">KB Category</div>
+                <div class="metric-value">{result["category"]}</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+        # Details expansion panel for debugging
+        with st.expander("🔍 Show Similarity Matching Metadata", expanded=True):
+            st.markdown(f"**User Query:** `{result['query']}`")
+            st.markdown(f"**Best Matched FAQ Question:** `{result['matched_question']}`")
+            st.markdown(f"**Configured Threshold:** `{threshold_val}`")
+            st.markdown(f"**FAQ ID:** `{result['faq_id']}`")
+            
+            # Progress bar for score visualization
+            st.markdown("**Similarity Visualizer:**")
+            st.progress(result["similarity_score"])
+            
+    elif submit_button:
+        st.info("Please enter a valid query to search the FAQ database.")
+
+    # Side-panel / bottom panel: FAQ Reference List
+    st.divider()
+    with st.expander("📚 Browse Entire Knowledge Base FAQ List", expanded=False):
+        for item in st.session_state.chatbot.faqs:
+            st.markdown(f"**[{item['category']}] Q: {item['question']}**")
+            st.markdown(f"A: {item['answer']}")
+            st.divider()

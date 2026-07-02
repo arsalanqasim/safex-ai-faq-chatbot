@@ -1,66 +1,99 @@
-# Technical Architecture & Design Decisions - SafeX RAG
+# safex-ai-faq-chatbot — System Architecture
 
-This document details the software engineering design decisions made during the construction of the SafeX AI Knowledge Assistant (RAG) boilerplate.
-
----
-
-## 1. Key Architectural Decisions
-
-### A. Source-Agnostic Document Loader (`load_documents.py`)
-- **Problem**: Document indexing is often coupled with specific scrapers or parsing structures. If the team switches from text files to website scrapes or PDFs, the entire backend usually breaks.
-- **Solution**: We implemented a unified `Document` abstraction. The loading module reads diverse formats (HTML, PDF, MD, TXT, JSON) and converts them into standardized `Document` objects containing `text` and `metadata` dictionary fields.
-- **Result**: The cleaning, chunking, and embedding stages remain identical regardless of the input data source. Interns can add support for extra formats (e.g., DOCX, SQL databases) by simply adding a loading function in `load_documents.py`.
-
-### B. Dependency-Free Vector Database (`vector_store.py`)
-- **Problem**: Popular vector databases like ChromaDB or FAISS can be challenging to install on Windows machines due to C++ compilation dependencies (e.g., Microsoft Visual C++ Build Tools). This creates friction for interns during onboarding.
-- **Solution**: We built a lightweight custom vector store using standard `numpy` array operations for Cosine Similarity:
-  $$\text{Similarity} = \frac{\mathbf{A} \cdot \mathbf{B}}{\|\mathbf{A}\| \|\mathbf{B}\|}$$
-  The database is saved to disk as a serialized binary file using Python's native `pickle` module.
-- **Result**: Zero installation issues. The code runs out-of-the-box on any OS with `numpy` installed. If the project scales, the vector store interface is structured so they can replace the similarity search with ChromaDB or FAISS with minimal modifications.
-
-### C. Swappable Provider Interfaces (`embeddings.py` & `chatbot.py`)
-- **Problem**: Being locked into a single API provider (like Google Gemini) risks downtime or breaking changes. However, implementing heavy frameworks like LangChain adds unnecessary complexity.
-- **Solution**: We created thin abstract base classes (`EmbeddingProvider` and `LLMProvider`) and factory functions. By default, the app uses Google's Gemini SDK.
-- **Result**:
-  1. Interns can easily write a new subclass (e.g., `OpenAILLMProvider` or `HuggingFaceEmbeddingProvider`) and swap it in the configurations.
-  2. The project includes a `MockEmbeddingProvider` and `MockLLMProvider` that generate dummy values. This allows the team to work on the UI, cleaning, and formatting pipelines completely offline without an API key.
+This document outlines the system architecture and data-flow pipelines for the SafeX Semantic FAQ Chatbot. The design follows strict modular guidelines where each component carries exactly one responsibility.
 
 ---
 
-## 2. RAG Logic Flow
+## 1. Overall System Architecture
 
-```text
-       [ User Query ]
-             │
-             ▼
-     ┌───────────────┐
-     │ Query Embed   │  ◄── (embeddings.py: Gemini/Mock embedding API)
-     └───────┬───────┘
-             │ Vector
-             ▼
-     ┌───────────────┐
-     │ Cosine Search │  ◄── (vector_store.py: numpy matrix math)
-     └───────┬───────┘
-             │ Top-K Chunks
-             ▼
-     ┌───────────────┐
-     │ Prompt Synthes│  ◄── (config/prompts.py: system restrictions)
-     └───────┬───────┘
-             │ Prompt
-             ▼
-     ┌───────────────┐
-     │ LLM Generation│  ◄── (chatbot.py: Gemini LLM query)
-     └───────┬───────┘
-             │ Response
-             ▼
-      [ User Answer ]
+The system uses a classic decoupled Model-View-Controller (MVC) architectural design, where:
+- **View:** The Streamlit dashboard (`app.py`) provides the interface for user input and visualizes similarity analytics.
+- **Controller/Orchestrator:** The `FAQChatbot` class (`chatbot.py`) coordinates loading the database and dispatching similarity matching.
+- **Model/Engine:** The similarity module (`similarity.py`) holds the TF-IDF and cosine similarity logic, utilizing `scikit-learn`.
+
+```mermaid
+graph TD
+    User([User]) <-->|1. Input Query / View Results| StreamlitApp[Streamlit Dashboard: app.py]
+    StreamlitApp <-->|2. Dispatches Query| FAQChatbot[Chatbot Orchestrator: chatbot.py]
+    FAQChatbot -->|3. Loads JSON Data| KB[Knowledge Base Loader: knowledge_base.py]
+    KB -->|Reads| JSON[(data/faq.json)]
+    FAQChatbot <-->|4. Processes Text & Matches Vectors| SimilarityModel[Similarity Engine: similarity.py]
+    SimilarityModel -->|Uses| Utils[Text Utilities: utils.py]
 ```
 
 ---
 
-## 3. Preventative Guardrails (Hallucination Control)
-To make the chatbot production-inspired, it must not hallucinate answers if data is missing. We enforce this through two distinct layers:
-1. **System Prompt Guardrails**: The system instructions in `src/config/prompts.py` explicitly instruct the model to only use the context provided and reply with:
-   > *"I am sorry, but I do not have information to answer that question based on my current knowledge base."*
-   if the facts are missing from the context.
-2. **Relevance Threshold**: Chunks retrieved with cosine similarity scores below `RETRIEVAL_THRESHOLD` (defined in `settings.py`) are filtered out. If no chunks exceed this threshold, the system passes an empty context flag, forcing the LLM to output the "I do not know" response.
+## 2. Knowledge Base Loading Flow
+
+This sequence occurs once during the initialization of the chatbot, fitting the vectorizer on the verified FAQ dataset:
+
+```mermaid
+sequenceDiagram
+    participant App as Streamlit app.py
+    participant Bot as FAQChatbot (chatbot.py)
+    participant KB as KB Loader (knowledge_base.py)
+    participant Model as SimilarityModel (similarity.py)
+    participant File as FAQ Dataset (data/faq.json)
+
+    App->>Bot: Instantiate FAQChatbot(faq_path)
+    Bot->>KB: load_faq_data(faq_path)
+    KB->>File: Open & Parse JSON File
+    File-->>KB: Raw JSON List
+    KB->>KB: Validate Structure (check question/answer keys)
+    KB-->>Bot: List of FAQ Dictionaries
+    Bot->>Model: fit(questions)
+    Model->>Model: fit_transform(questions) with TF-IDF Vectorizer
+    Model-->>Bot: TF-IDF Vector Space fitted
+    Bot-->>App: Chatbot Ready
+```
+
+---
+
+## 3. Question Processing Pipeline
+
+Every user query undergoes normalization before calculation to ensure matches are spelling-case and punctuation independent:
+
+```mermaid
+graph LR
+    RawQuery["Raw User Query (e.g. 'Who founded SafeX?')"]
+    --> Lowercase["1. Lowercase conversion ('who founded safex?')"]
+    --> RemovePunctuation["2. Remove Punctuation & Special Chars ('who founded safex')"]
+    --> NormalizeWhitespace["3. Collapse Whitespace ('who founded safex')"]
+    --> CleanQuery["Normalized Query String"]
+```
+
+---
+
+## 4. Similarity Matching Engine
+
+The core similarity algorithm uses a local Vector Space Model. We compute the Cosine Similarity between the normalized user query vector and all FAQ question vectors:
+
+```mermaid
+graph TD
+    CleanQuery[Normalized Query String] --> Vectorize[Transform to TF-IDF Query Vector]
+    Vectorize --> SimilarityDot[Dot Product: Query Vector • FAQ Vectors]
+    FittedMatrix[(Fitted FAQ TF-IDF Matrix)] --> SimilarityDot
+    SimilarityDot --> CosineScore[Calculate Cosine Similarity Scores]
+    CosineScore --> FindMax[Identify Highest Score and Index]
+    FindMax --> MatchResult[Return: matched_index, similarity_score]
+```
+
+Cosine Similarity is calculated as:
+$$\text{Similarity}(\mathbf{q}, \mathbf{d}) = \cos(\theta) = \frac{\mathbf{q} \cdot \mathbf{d}}{\|\mathbf{q}\| \|\mathbf{d}\|} = \frac{\sum_{i=1}^{n} q_i d_i}{\sqrt{\sum_{i=1}^{n} q_i^2} \sqrt{\sum_{i=1}^{n} d_i^2}}$$
+
+---
+
+## 5. Response Generation & Threshold Logic
+
+Once a match is returned, the orchestrator evaluates whether the similarity score exceeds the configured minimum threshold before returning the answer:
+
+```mermaid
+graph TD
+    MatchResult[Match Result: score & index] --> ThresholdCheck{Similarity Score >= Threshold?}
+    ThresholdCheck -->|Yes| FetchAnswer[Retrieve Verified FAQ Answer]
+    FetchAnswer --> ReturnResponse[Return FAQ Answer + Matched Question + Score]
+    ThresholdCheck -->|No| FetchFallback[Retrieve Fallback Message]
+    FetchFallback --> ReturnFallback[Return Fallback Message + Matched Question + Score]
+    ReturnResponse --> RenderUI[Render Response Panel in Dashboard]
+    ReturnFallback --> RenderUI
+```

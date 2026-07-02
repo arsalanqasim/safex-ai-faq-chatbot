@@ -1,2 +1,0 @@
-Place raw source files here for the ingestion pipeline to parse.
-Supported formats: .txt, .md, .pdf, .json, .html

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "faq_01",
+    "category": "Company Overview",
+    "question": "What is SafeX Solutions?",
+    "answer": "SafeX Solutions is an innovative AI/ML development agency specializing in intelligent automated systems, custom software solutions, and talent development through academic and professional internship programs."
+  },
+  {
+    "id": "faq_02",
+    "category": "Company Overview",
+    "question": "Who is the founder of SafeX Solutions (who founded it)?",
+    "answer": "SafeX Solutions was founded by Ateeq Ullah, who serves as the principal director guiding the company's research, client projects, and internship initiatives."
+  },
+  {
+    "id": "faq_03",
+    "category": "Internship Program",
+    "question": "What is the duration of the AI/ML internship?",
+    "answer": "The AI/ML internship program at SafeX Solutions is typically structured as a 4-to-8 week program depending on the cohort guidelines. Week 1 is dedicated to building basic prototypes and establishing core software engineering practices."
+  },
+  {
+    "id": "faq_04",
+    "category": "Internship Program",
+    "question": "What benefits are offered in the AI/ML internship?",
+    "answer": "The internship offers hands-on experience with real-world projects, direct mentorship from senior engineering leads, peer-programming opportunities, a professional internship completion certificate, and consideration for future full-time roles."
+  },
+  {
+    "id": "faq_05",
+    "category": "Internship Program",
+    "question": "Is the internship remote, hybrid, or work from home (WFH)?",
+    "answer": "SafeX Solutions offers a flexible hybrid model. Interns can collaborate remotely through standard Git-based workflows and join weekly on-site or virtual team meetings for progress reviews."
+  },
+  {
+    "id": "faq_06",
+    "category": "Operations",
+    "question": "What are the office hours for interns?",
+    "answer": "Official office hours are from 9:00 AM to 5:00 PM (Monday through Friday). Interns are expected to maintain regular communication on Slack/Teams and submit their weekly progress summaries by Thursday EOD."
+  },
+  {
+    "id": "faq_07",
+    "category": "Operations",
+    "question": "How is the performance of interns evaluated?",
+    "answer": "Interns are evaluated based on code quality, alignment with software design principles, meeting delivery deadlines, regular weekly summary submissions, and their performance in the final cohort prototype presentation."
+  },
+  {
+    "id": "faq_08",
+    "category": "Operations",
+    "question": "What are the requirements to receive a completion certificate?",
+    "answer": "To receive an internship completion certificate, interns must submit all weekly progress summaries, push functioning commits for their assigned modules, participate in peer review, and successfully demo their team's final product."
+  },
+  {
+    "id": "faq_09",
+    "category": "Support",
+    "question": "How can I contact the internship coordinator?",
+    "answer": "For administrative or project queries, you can contact the internship coordination desk at hr@safexsolutions.com or reach out directly to the cohort coordinator on the official messaging channel."
+  },
+  {
+    "id": "faq_10",
+    "category": "Technical",
+    "question": "What technology stack, programming languages, and frameworks are used in the AI/ML internship?",
+    "answer": "The technology stack focuses on Python core libraries, Streamlit for interactive UI prototyping, pandas/numpy for data handling, and scikit-learn/sentence-transformers for machine learning models and NLP features."
+  }
+]

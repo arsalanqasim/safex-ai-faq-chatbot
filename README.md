@@ -1,70 +1,72 @@
-# SafeX AI Knowledge Assistant (RAG)
+# safex-ai-faq-chatbot
 
-Welcome to the **SafeX AI Knowledge Assistant** repository! This project is a production-inspired, Retrieval-Augmented Generation (RAG) knowledge retrieval application developed by **Group 54** during the SafeX Solutions AI/ML Internship.
+[![Python 3.13](https://img.shields.io/badge/python-3.13-blue.svg)](https://www.python.org/)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-Dashboard-red.svg)](https://streamlit.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-The assistant is built to ingest unstructured company documents (such as web pages, PDF offers, Markdown, plain text, and JSON FAQ sheets) and answer user inquiries accurately using Google's **Gemini API**—ensuring absolute factual accuracy by refusing to answer when data is missing.
-
----
-
-## 👥 Group 54 Roster
-
-*   **Group Leader:**
-    *   **Arsalan Qasim** (arsalanqasim400@gmail.com) — *AI/ML Intern*
-*   **Team Members:**
-    1.  **MUHAMMAD WASIM** (muhammadwasimpukhtoon@gmail.com) — *AI, Data Science, ML*
-    2.  **Muhammed Faizan Mujtaba** (fozanmujtaba.480@gmail.com) — *AI/ML*
-    3.  **Shahidullah** (shahidullahkhan091@gmail.com) — *Web Development, AI/ML*
-    4.  **Ali Ammar Haider** (aliwheht688@gmail.com) — *Data Analytics, Business Intelligence*
-    5.  **Abdul Haseeb** (abdlhaseeb17@gmail.com) — *AI/ML*
-    6.  **Hammad Abbas** (hammadhadid723@gmail.com) — *Data Analysis & Data Science*
-    7.  **Ali Zaib** (aliofficialzaib@gmail.com) — *AI/ML*
+An AI-powered semantic FAQ chatbot for SafeX Solutions using sentence TF-IDF embeddings and cosine similarity. Built as a Week 1 internship prototype with a complete portfolio case study.
 
 ---
 
-## 📁 Repository Directory Structure
+## 📖 Project Overview
+
+This repository represents the Week 1 deliverable for the SafeX AI/ML internship cohort. The objective was to build a polished, modular AI prototype that answers user questions using semantic matching against a verified internal FAQ database. Rather than relying on heavy and complex enterprise architectures (RAG, vector databases, LLM APIs), this prototype implements a lightweight, local text representation model (TF-IDF vectorizer) and cosine similarity metrics to search, analyze, and retrieve matching FAQs entirely offline.
+
+---
+
+## ✨ Features
+
+- **Semantic FAQ Retrieval:** Maps user queries to the closest verified FAQ question using TF-IDF word frequency vectors and cosine similarity calculations.
+- **Configurable Relevance Threshold:** Features a slider in the user interface to adjust the minimum similarity score (default `0.35`). Queries scoring below the threshold trigger a friendly fallback message, preventing false positives.
+- **Streamlit Diagnostic Dashboard:** An internal tool-style UI that displays the matched FAQ, similarity score, response latency, and a progress bar visualizer.
+- **Automated Evaluation Framework:** Includes a batch evaluation script to query the chatbot against positive/negative test questions, logging execution metrics and accuracy to a CSV file.
+- **Clean and Modular Structure:** Follows professional software engineering practices with decoupled files for configuration, database parsing, text preprocessing, similarity math, and testing.
+
+---
+
+## 📁 Project Structure
 
 ```text
-safex/
+safex-ai-faq-chatbot/
+├── .env                          # Local environment variables
 ├── .env.example                  # Environment configuration template
-├── .gitignore                    # Python file tracking ignores
-├── README.md                     # Onboarding and workflow instructions (This File)
-├── SYSTEM_ARCHITECTURE.md        # Technical design diagrams (Mermaid format)
+├── .gitignore                    # Git tracking exclusions
+├── README.md                     # Project documentation (This File)
 ├── requirements.txt              # Project dependencies
 ├── assets/
-│   ├── logo/                     # SafeX logo assets
-│   ├── screenshots/              # Portfolio screenshots
-│   └── demo.gif                  # Animated application preview
+│   ├── screenshots/              # UI and diagnostic screenshots
+│   └── demo.gif                  # Interactive application demonstration
 ├── data/
-│   ├── raw/                      # Raw text, HTML, JSON FAQ, and PDF files
-│   ├── processed/                # Preprocessed and cleaned chunks
-│   └── vector_store/             # Serialized NumPy vector database files
+│   └── faq.json                  # Verified SafeX FAQ knowledge base (JSON)
 ├── docs/
-│   ├── Architecture.md           # Deep dive into engineering decisions
-│   ├── Case_Study.md             # Portfolio Case Study Template
-│   ├── Evaluation.md             # Guide for benchmarking accuracy & latency
-│   ├── Meeting_Notes.md          # Templates for weekly team syncs
-│   └── Weekly/                   # Weekly progress submissions folder
-├── src/                          # RAG Source Code
-│   ├── __init__.py
-│   ├── app.py                    # Streamlit visual UI frontend
-│   ├── chatbot.py                # Runtime query pipeline
-│   ├── logger.py                 # Application logger configuration
-│   ├── config/                   # Settings and prompt files
-│   └── pipeline/                 # Modular document indexing modules
-└── tests/                        # Automated unit tests
-    └── test_rag.py
+│   ├── Architecture.md           # Mermaid system flow diagrams
+│   ├── Case_Study.md             # Complete portfolio case study
+│   ├── Evaluation.md             # Benchmark procedures and results analysis
+│   └── Weekly/
+│       └── weekly_summary_template.md  # Template for intern weekly summaries
+├── evaluation/
+│   ├── run_eval.py               # Automated evaluation test script
+│   ├── test_questions.json       # positive/negative test datasets
+│   └── evaluation_results.csv    # Benchmark log outputs from test runs
+├── src/
+│   ├── app.py                    # Streamlit visual dashboard
+│   ├── chatbot.py                # Chatbot orchestrator
+│   ├── config.py                 # Project path and threshold settings
+│   ├── knowledge_base.py         # JSON database parser & validator
+│   ├── similarity.py             # TF-IDF & Cosine Similarity engine
+│   └── utils.py                  # Text preprocessing utilities
+└── tests/
+    └── test_chatbot.py           # Pytest unit tests suite
 ```
 
 ---
 
-## 🛠️ Local Setup Instructions
-
-Follow these steps to set up and run the project locally on your machine:
+## 🛠️ Installation & Setup
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/arsalanqasim/safex-knowledge-assistant.git
-cd safex-knowledge-assistant
+git clone https://github.com/arsalanqasim/safex-ai-faq-chatbot.git
+cd safex-ai-faq-chatbot
 ```
 
 ### 2. Set Up a Virtual Environment
@@ -85,65 +87,87 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Configure Environment Variables
-1.  Copy the environment template:
-    ```bash
-    cp .env.example .env
-    ```
-2.  Open the newly created `.env` file and insert your **Gemini API Key**:
-    ```text
-    GEMINI_API_KEY=your_actual_api_key_here
-    ```
-    *Note: If no API key is specified, the application will automatically fall back to **Mock/Offline Mode**, allowing you to test UI and pipelines without internet connectivity.*
+### 4. Environment Configuration
+Copy the template environment variables:
+```bash
+cp .env.example .env
+```
+*(No API keys are required; the chatbot runs entirely locally using scikit-learn.)*
 
 ---
 
-## 🚀 Execution & Workflow
+## 🚀 Running the Project
 
-### 1. Build the Vector Index (Run Once)
-Before querying the assistant, you must populate the vector database with raw files. 
-Place raw data files (HTML, TXT, MD, JSON FAQ, or PDF) into `data/raw/` and execute the indexing pipeline:
-```bash
-python src/pipeline/vector_store.py
-```
-This runs the full ingestion pipeline: Loader ➔ Cleaner ➔ Chunker ➔ Embedder ➔ NumPy Index compiler.
-
-### 2. Start the Streamlit Application
+### 1. Start the Streamlit App
 Run the frontend UI server:
 ```bash
 streamlit run src/app.py
 ```
-Open the URL shown in your terminal (usually `http://localhost:8501`) to interact with the SafeX AI Knowledge Assistant. You can also trigger database rebuilds directly from the UI sidebar.
+Open `http://localhost:8501` in your browser to interact with the internal FAQ dashboard.
 
-### 3. Run Automated Tests
-Verify code integrity using `pytest`:
+### 2. Run Automated Evaluation
+Execute the performance test suite:
+```bash
+python evaluation/run_eval.py
+```
+This script runs a series of positive (semantically rephrased) and negative (unrelated) queries, matches them, evaluates correctness, and logs the outcomes to `evaluation/evaluation_results.csv`.
+
+### 3. Run Unit Tests
+Verify codebase integrity using `pytest`:
 ```bash
 pytest tests/
 ```
 
 ---
 
-## 🤝 Collaborative Development Git Workflow
+## 📊 Evaluation Metrics
 
-To maintain a clean codebase, Group 54 uses a standard Feature-Branch git workflow:
+The current baseline run metrics logged by the automated script:
+- **Total Test Cases:** 12 (10 positive, 2 negative)
+- **Matching Accuracy:** 100%
+- **Average Latency:** ~0.80 ms
+- **Details:** Can be viewed under [docs/Evaluation.md](file:///c:/Users/arsal/Desktop/safex/docs/Evaluation.md) and [evaluation_results.csv](file:///c:/Users/arsal/Desktop/safex/evaluation/evaluation_results.csv).
 
-1.  **Pull latest changes**: Always start by checking out the main branch and pulling the newest updates:
-    ```bash
-    git checkout main
-    git pull origin main
-    ```
-2.  **Create a feature branch**: Never write code directly on `main`. Create a descriptive branch named after your task:
-    *   *Loading tasks:* `git checkout -b feature/load-pdf`
-    *   *Cleaning tasks:* `git checkout -b feature/clean-html`
-    *   *UI modifications:* `git checkout -b feature/style-streamlit`
-    *   *Bug fixes:* `git checkout -b bugfix/embed-rate-limit`
-3.  **Commit changes**: Commit code in clean, logical units with descriptive messages:
-    ```bash
-    git add .
-    git commit -m "feat(loader): implement PDF page extractor using pypdf"
-    ```
-4.  **Push and open a PR**: Push your branch to GitHub and create a Pull Request for code review:
-    ```bash
-    git push origin feature/load-pdf
-    ```
-5.  **Review**: At least one other team member should review the code before merging it to `main`.
+---
+
+## 👥 Team & Task Distribution
+
+To ensure modular collaboration and minimize merge conflicts, the project responsibilities were distributed among the cohort members as follows:
+
+| Intern Name | Role | Primary Responsibility / Ownership |
+| :--- | :--- | :--- |
+| **Arsalan Qasim** | **Leader / Release Coordinator** | Project architecture setup, GitHub repository management, and PR approvals. |
+| **Muhammad Wasim** | **Similarity Engine Engineer** | Core similarity algorithm implementation (`src/similarity.py`). |
+| **Muhammad Faozan Mujtaba** | **Knowledge Base Architect** | JSON FAQ database preparation and loading (`src/knowledge_base.py` & `data/faq.json`). |
+| **Shahidullah** | **Frontend UI Developer** | Streamlit user interface development and theme design (`src/app.py`). |
+| **Ali Ammar Haider** | **Backend Integration Lead** | Chatbot coordination, thresholds, and configuration settings (`src/chatbot.py` & `src/config.py`). |
+| **Abdul Haseeb** | **QA & Test Engineer** | Writing unit test coverage and verification scripts (`tests/test_chatbot.py`). |
+| **Hammad Abbas** | **Evaluation Lead** | Creating test cases, writing the evaluation script, and documenting results (`evaluation/run_eval.py` & `docs/Evaluation.md`). |
+| **Ali Zaib** | **Technical Writer** | Preparing the case study, architectural details, and templates (`docs/Case_Study.md` & `docs/Architecture.md`). |
+
+---
+
+## 🤝 Contribution Workflow
+
+1. **Checkout Main:** `git checkout main` and pull latest updates: `git pull origin main`.
+2. **Create Branch:** Create a branch for your assigned task: `git checkout -b feature/your-feature-name`.
+3. **Commit:** Commit your changes with descriptive messages: `git commit -m "feat(module): description of contribution"`.
+4. **Push:** Push branch to remote: `git push origin feature/your-feature-name`.
+5. **Pull Request:** Open a Pull Request on GitHub against `main` and request reviews.
+
+---
+
+## 🖼️ Screenshots & Demo
+
+*Placeholders for media showcase:*
+- **App Dashboard Overview:** `assets/screenshots/dashboard_screenshot.png`
+- **Matching Evaluation Runs:** `assets/screenshots/evaluation_terminal.png`
+- **Application Demo:** `assets/demo.gif`
+
+---
+
+## 🔮 Future Improvements
+
+1. **Character N-gram Matching:** Adding n-grams to TF-IDF to support better handling of spelling typos.
+2. **Contextual Word Embeddings:** Swapping TF-IDF with a lightweight Transformer model (e.g. `all-MiniLM-L6-v2` via `sentence-transformers`) for true semantic similarity that understands synonyms without explicit keyword addition.
+3. **Automated KB Expansion:** Integrating a script to automatically ingest and convert document PDFs into FAQ entries.

@@ -1,30 +1,74 @@
 [
   {
-    "id": "q1",
-    "category": "positive",
+    "id": "q_01",
     "question": "What is SafeX Solutions?",
-    "expected_keywords": ["SafeX", "internship", "solutions"],
-    "source_reference": "internship_offer_letter.pdf"
+    "expected_faq_id": "faq_01",
+    "category": "positive"
   },
   {
-    "id": "q2",
-    "category": "positive",
-    "question": "Who is the founder of SafeX Solutions?",
-    "expected_keywords": ["Ateeq Ullah"],
-    "source_reference": "internship_offer_letter.pdf"
+    "id": "q_02",
+    "question": "Who founded the company SafeX?",
+    "expected_faq_id": "faq_02",
+    "category": "positive"
   },
   {
-    "id": "q3",
-    "category": "positive",
-    "question": "What benefits are offered in the AI/ML internship?",
-    "expected_keywords": ["real-world projects", "mentorship", "certificate", "future opportunities"],
-    "source_reference": "internship_offer_letter.pdf"
+    "id": "q_03",
+    "question": "How long does the AI/ML internship last?",
+    "expected_faq_id": "faq_03",
+    "category": "positive"
   },
   {
-    "id": "q4",
-    "category": "negative",
-    "question": "What is the monthly stipend for Group 54 interns?",
-    "expected_keywords": ["I am sorry, but I do not have information"],
-    "source_reference": "None (Should trigger no-information fallback)"
+    "id": "q_04",
+    "question": "What benefits do I get as an intern?",
+    "expected_faq_id": "faq_04",
+    "category": "positive"
+  },
+  {
+    "id": "q_05",
+    "question": "What is the policy for working from home?",
+    "expected_faq_id": "faq_05",
+    "category": "positive"
+  },
+  {
+    "id": "q_06",
+    "question": "What are the daily hours at the office?",
+    "expected_faq_id": "faq_06",
+    "category": "positive"
+  },
+  {
+    "id": "q_07",
+    "question": "How do you evaluate performance?",
+    "expected_faq_id": "faq_07",
+    "category": "positive"
+  },
+  {
+    "id": "q_08",
+    "question": "What is needed to get my internship completion certificate?",
+    "expected_faq_id": "faq_08",
+    "category": "positive"
+  },
+  {
+    "id": "q_09",
+    "question": "How can I contact the cohort leader?",
+    "expected_faq_id": "faq_09",
+    "category": "positive"
+  },
+  {
+    "id": "q_10",
+    "question": "What programming languages and frameworks do you use?",
+    "expected_faq_id": "faq_10",
+    "category": "positive"
+  },
+  {
+    "id": "q_11",
+    "question": "What is the monthly stipend or pay rate?",
+    "expected_faq_id": "None",
+    "category": "negative"
+  },
+  {
+    "id": "q_12",
+    "question": "Can you give me a recipe for cooking chocolate cake?",
+    "expected_faq_id": "None",
+    "category": "negative"
   }
 ]
