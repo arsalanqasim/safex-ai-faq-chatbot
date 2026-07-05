@@ -1,20 +1,742 @@
 [
   {
-    "id": "q_01",
-    "question": "What is SafeX Solutions?",
-    "expected_faq_id": "faq_01",
-    "category": "positive"
+    "input": "Tell me about SafeX Solutions.",
+    "expected_answer_id": 1
   },
   {
-    "id": "q_02",
-    "question": "Who founded the company SafeX?",
-    "expected_faq_id": "faq_02",
-    "category": "positive"
+    "input": "What kind of company is SafeX?",
+    "expected_answer_id": 1
   },
   {
-    "id": "q_03",
-    "question": "What is the recipe for making lasagna?",
-    "expected_faq_id": "None",
-    "category": "negative"
+    "input": "What services does SafeX company offer?",
+    "expected_answer_id": 2
+  },
+  {
+    "input": "Is SafeX an international company?",
+    "expected_answer_id": 4
+  },
+  {
+    "input": "What makes SafeX different from others?",
+    "expected_answer_id": 5
+  },
+  {
+    "input": "What are SafeX values?",
+    "expected_answer_id": 6
+  },
+  {
+    "input": "Who are SafeX clients?",
+    "expected_answer_id": 7
+  },
+  {
+    "input": "What is SafeX mission?",
+    "expected_answer_id": 8
+  },
+  {
+    "input": "How does SafeX help students?",
+    "expected_answer_id": 9
+  },
+  {
+    "input": "Does SafeX support education?",
+    "expected_answer_id": 10
+  },
+  {
+    "input": "What is the future vision of SafeX?",
+    "expected_answer_id": 11
+  },
+  {
+    "input": "What is SafeX slogan?",
+    "expected_answer_id": 12
+  },
+  {
+    "input": "Why was SafeX founded?",
+    "expected_answer_id": 14
+  },
+  {
+    "input": "What is SafeX long term objective?",
+    "expected_answer_id": 15
+  },
+  {
+    "input": "What services do you offer?",
+    "expected_answer_id": 16
+  },
+  {
+    "input": "Tell me about SafeX services.",
+    "expected_answer_id": 16
+  },
+  {
+    "input": "Do you provide IT solutions?",
+    "expected_answer_id": 16
+  },
+  {
+    "input": "Can SafeX build websites?",
+    "expected_answer_id": 17
+  },
+  {
+    "input": "Do you offer website development?",
+    "expected_answer_id": 17
+  },
+  {
+    "input": "Can you create custom web applications?",
+    "expected_answer_id": 18
+  },
+  {
+    "input": "Do you build custom web apps?",
+    "expected_answer_id": 18
+  },
+  {
+    "input": "Do you provide cloud services?",
+    "expected_answer_id": 19
+  },
+  {
+    "input": "Are cloud solutions available?",
+    "expected_answer_id": 19
+  },
+  {
+    "input": "Do you offer cybersecurity?",
+    "expected_answer_id": 20
+  },
+  {
+    "input": "Can SafeX protect business data?",
+    "expected_answer_id": 20
+  },
+  {
+    "input": "Do you provide network infrastructure services?",
+    "expected_answer_id": 21
+  },
+  {
+    "input": "Can you manage IT infrastructure?",
+    "expected_answer_id": 21
+  },
+  {
+    "input": "Do you offer IT consulting?",
+    "expected_answer_id": 22
+  },
+  {
+    "input": "Can SafeX help with digital transformation?",
+    "expected_answer_id": 22
+  },
+  {
+    "input": "Do you provide digital marketing?",
+    "expected_answer_id": 23
+  },
+  {
+    "input": "Can SafeX promote my business online?",
+    "expected_answer_id": 23
+  },
+  {
+    "input": "Do you provide SEO services?",
+    "expected_answer_id": 24
+  },
+  {
+    "input": "Can you improve my website ranking?",
+    "expected_answer_id": 24
+  },
+  {
+    "input": "Do you manage social media accounts?",
+    "expected_answer_id": 25
+  },
+  {
+    "input": "Can SafeX handle social media marketing?",
+    "expected_answer_id": 25
+  },
+  {
+    "input": "Do you offer branding services?",
+    "expected_answer_id": 26
+  },
+  {
+    "input": "Can you create a brand identity?",
+    "expected_answer_id": 26
+  },
+  {
+    "input": "Do you help generate leads?",
+    "expected_answer_id": 27
+  },
+  {
+    "input": "Can SafeX help me get more customers?",
+    "expected_answer_id": 27
+  },
+  {
+    "input": "Do you provide marketing analytics?",
+    "expected_answer_id": 28
+  },
+  {
+    "input": "Can you analyze marketing performance?",
+    "expected_answer_id": 28
+  },
+  {
+    "input": "Do you offer photography services?",
+    "expected_answer_id": 29
+  },
+  {
+    "input": "Can SafeX do commercial photography?",
+    "expected_answer_id": 29
+  },
+  {
+    "input": "Do you provide videography?",
+    "expected_answer_id": 30
+  },
+  {
+    "input": "Can you produce corporate videos?",
+    "expected_answer_id": 30
+  },
+  {
+    "input": "Can SafeX create promotional videos?",
+    "expected_answer_id": 31
+  },
+  {
+    "input": "Do you create promotional content?",
+    "expected_answer_id": 31
+  },
+  {
+    "input": "Do you provide video editing?",
+    "expected_answer_id": 32
+  },
+  {
+    "input": "Can you edit business videos?",
+    "expected_answer_id": 32
+  },
+  {
+    "input": "Do you create visual marketing campaigns?",
+    "expected_answer_id": 33
+  },
+  {
+    "input": "Can SafeX develop creative campaigns?",
+    "expected_answer_id": 33
+  },
+  {
+    "input": "Are your services suitable for startups?",
+    "expected_answer_id": 34
+  },
+  {
+    "input": "Do you work with startups?",
+    "expected_answer_id": 34
+  },
+  {
+    "input": "Can I get multiple services from SafeX?",
+    "expected_answer_id": 35
+  },
+  {
+    "input": "Do you provide complete business solutions?",
+    "expected_answer_id": 35
+  },
+  {
+    "input": "Do you offer internships?",
+    "expected_answer_id": 36
+  },
+  {
+    "input": "Can I join as an intern?",
+    "expected_answer_id": 36
+  },
+  {
+    "input": "Who is eligible for internships?",
+    "expected_answer_id": 37
+  },
+  {
+    "input": "Can fresh graduates apply?",
+    "expected_answer_id": 37
+  },
+  {
+    "input": "Do you provide professional training?",
+    "expected_answer_id": 38
+  },
+  {
+    "input": "Are training programs available?",
+    "expected_answer_id": 38
+  },
+  {
+    "input": "What training do you offer?",
+    "expected_answer_id": 39
+  },
+  {
+    "input": "Which workshops are available?",
+    "expected_answer_id": 39
+  },
+  {
+    "input": "Do you provide mentorship?",
+    "expected_answer_id": 40
+  },
+  {
+    "input": "Can I get guidance from mentors?",
+    "expected_answer_id": 40
+  },
+  {
+    "input": "Do you help with career growth?",
+    "expected_answer_id": 41
+  },
+  {
+    "input": "How do you support career development?",
+    "expected_answer_id": 41
+  },
+  {
+    "input": "Do you have leadership programs?",
+    "expected_answer_id": 42
+  },
+  {
+    "input": "Can I develop leadership skills?",
+    "expected_answer_id": 42
+  },
+  {
+    "input": "How can I contact SafeX?",
+    "expected_answer_id": 43
+  },
+  {
+    "input": "What is your contact information?",
+    "expected_answer_id": 43
+  },
+  {
+    "input": "What is your email address?",
+    "expected_answer_id": 44
+  },
+  {
+    "input": "How can I email SafeX?",
+    "expected_answer_id": 44
+  },
+  {
+    "input": "What is your phone number?",
+    "expected_answer_id": 45
+  },
+  {
+    "input": "Can I call SafeX?",
+    "expected_answer_id": 45
+  },
+  {
+    "input": "Where is your office located?",
+    "expected_answer_id": 46
+  },
+  {
+    "input": "What is your office address?",
+    "expected_answer_id": 46
+  },
+  {
+    "input": "What are your office hours?",
+    "expected_answer_id": 47
+  },
+  {
+    "input": "When are you open?",
+    "expected_answer_id": 47
+  },
+  {
+    "input": "Can I contact you through the website?",
+    "expected_answer_id": 48
+  },
+  {
+    "input": "Is there a contact form?",
+    "expected_answer_id": 48
+  },
+  {
+    "input": "Do you provide customized solutions?",
+    "expected_answer_id": 49
+  },
+  {
+    "input": "Can I request a custom solution?",
+    "expected_answer_id": 49
+  },
+  {
+    "input": "Do you offer support after project delivery?",
+    "expected_answer_id": 50
+  },
+  {
+    "input": "Is post-project support available?",
+    "expected_answer_id": 50
+  },
+  {
+    "input": "Do interns work on real projects?",
+    "expected_answer_id": 51
+  },
+  {
+    "input": "Will I get practical experience during internship?",
+    "expected_answer_id": 51
+  },
+  {
+    "input": "Do you offer certification programs?",
+    "expected_answer_id": 52
+  },
+  {
+    "input": "Can I earn certifications through training?",
+    "expected_answer_id": 52
+  },
+  {
+    "input": "Do you provide career pathways?",
+    "expected_answer_id": 53
+  },
+  {
+    "input": "How do you help people build careers?",
+    "expected_answer_id": 53
+  },
+  {
+    "input": "Do you provide services specifically for startups?",
+    "expected_answer_id": 54
+  },
+  {
+    "input": "Can startups hire SafeX Solutions?",
+    "expected_answer_id": 54
+  },
+  {
+    "input": "How do I send a business inquiry?",
+    "expected_answer_id": 55
+  },
+  {
+    "input": "How can I request your services?",
+    "expected_answer_id": 55
+  },
+  {
+    "input": "Who are your clients?",
+    "expected_answer_id": 56
+  },
+  {
+    "input": "Do you work with startups and enterprises?",
+    "expected_answer_id": 56
+  },
+  {
+    "input": "Do you serve international clients?",
+    "expected_answer_id": 57
+  },
+  {
+    "input": "Do you work outside Pakistan?",
+    "expected_answer_id": 57
+  },
+  {
+    "input": "Can you build a custom solution for my business?",
+    "expected_answer_id": 58
+  },
+  {
+    "input": "Can you customize services for my company?",
+    "expected_answer_id": 58
+  },
+  {
+    "input": "Can a small business hire SafeX?",
+    "expected_answer_id": 59
+  },
+  {
+    "input": "Do you work with small businesses?",
+    "expected_answer_id": 59
+  },
+  {
+    "input": "Can you handle complete digital projects?",
+    "expected_answer_id": 60
+  },
+  {
+    "input": "Do you manage projects from start to finish?",
+    "expected_answer_id": 60
+  },
+  {
+    "input": "Do you support long-term projects?",
+    "expected_answer_id": 61
+  },
+  {
+    "input": "Can I hire you for an ongoing project?",
+    "expected_answer_id": 61
+  },
+  {
+    "input": "How do you start a new project?",
+    "expected_answer_id": 62
+  },
+  {
+    "input": "What is your project process?",
+    "expected_answer_id": 62
+  },
+  {
+    "input": "Do you analyze client requirements first?",
+    "expected_answer_id": 63
+  },
+  {
+    "input": "Is requirement analysis part of your process?",
+    "expected_answer_id": 63
+  },
+  {
+    "input": "Do you build scalable solutions?",
+    "expected_answer_id": 64
+  },
+  {
+    "input": "Are your solutions scalable?",
+    "expected_answer_id": 64
+  },
+  {
+    "input": "Do you focus on security?",
+    "expected_answer_id": 65
+  },
+  {
+    "input": "Are your technology solutions secure?",
+    "expected_answer_id": 65
+  },
+  {
+    "input": "Why should I choose SafeX Solutions?",
+    "expected_answer_id": 66
+  },
+  {
+    "input": "What makes SafeX a good choice?",
+    "expected_answer_id": 66
+  },
+  {
+    "input": "Can I request a consultation?",
+    "expected_answer_id": 67
+  },
+  {
+    "input": "Do you offer project consultation?",
+    "expected_answer_id": 67
+  },
+  {
+    "input": "How can I request a quotation?",
+    "expected_answer_id": 68
+  },
+  {
+    "input": "Can I get a price quote?",
+    "expected_answer_id": 68
+  },
+  {
+    "input": "Do you provide end-to-end digital services?",
+    "expected_answer_id": 69
+  },
+  {
+    "input": "Do you deliver complete digital solutions?",
+    "expected_answer_id": 69
+  },
+  {
+    "input": "Can I combine multiple services?",
+    "expected_answer_id": 70
+  },
+  {
+    "input": "Do you offer multiple services in one project?",
+    "expected_answer_id": 70
+  },
+  {
+    "input": "Do you build long-term client relationships?",
+    "expected_answer_id": 71
+  },
+  {
+    "input": "Do you provide long-term support?",
+    "expected_answer_id": 71
+  },
+  {
+    "input": "Can enterprise companies work with SafeX?",
+    "expected_answer_id": 72
+  },
+  {
+    "input": "Do you serve enterprise organizations?",
+    "expected_answer_id": 72
+  },
+  {
+    "input": "Do you use modern technologies?",
+    "expected_answer_id": 73
+  },
+  {
+    "input": "Do you provide modern IT solutions?",
+    "expected_answer_id": 73
+  },
+  {
+    "input": "Can I discuss my project before signing?",
+    "expected_answer_id": 74
+  },
+  {
+    "input": "Can we discuss requirements before development?",
+    "expected_answer_id": 74
+  },
+  {
+    "input": "How do I start working with SafeX?",
+    "expected_answer_id": 75
+  },
+  {
+    "input": "How can I get started?",
+    "expected_answer_id": 75
+  },
+  {
+    "input": "What is SafeX's future vision?",
+    "expected_answer_id": 76
+  },
+  {
+    "input": "How does SafeX create impact?",
+    "expected_answer_id": 77
+  },
+  {
+    "input": "Does SafeX encourage innovation?",
+    "expected_answer_id": 78
+  },
+  {
+    "input": "Why does SafeX invest in workforce development?",
+    "expected_answer_id": 79
+  },
+  {
+    "input": "Do you provide industry-aligned training?",
+    "expected_answer_id": 80
+  },
+  {
+    "input": "What benefits do interns receive?",
+    "expected_answer_id": 81
+  },
+  {
+    "input": "Does SafeX adopt the latest technologies?",
+    "expected_answer_id": 82
+  },
+  {
+    "input": "Do you help businesses with digital transformation?",
+    "expected_answer_id": 83
+  },
+  {
+    "input": "Are your solutions scalable?",
+    "expected_answer_id": 84
+  },
+  {
+    "input": "Do you prioritize cybersecurity?",
+    "expected_answer_id": 85
+  },
+  {
+    "input": "Do you publish technology articles?",
+    "expected_answer_id": 86
+  },
+  {
+    "input": "Where can I read your latest updates?",
+    "expected_answer_id": 87
+  },
+  {
+    "input": "Do you share educational content?",
+    "expected_answer_id": 88
+  },
+  {
+    "input": "Who can benefit from SafeX services?",
+    "expected_answer_id": 89
+  },
+  {
+    "input": "Do you offer end-to-end business services?",
+    "expected_answer_id": 90
+  },
+  {
+    "input": "Can SafeX help grow my business?",
+    "expected_answer_id": 91
+  },
+  {
+    "input": "How do you support digital innovation?",
+    "expected_answer_id": 92
+  },
+  {
+    "input": "What values is SafeX committed to?",
+    "expected_answer_id": 93
+  },
+  {
+    "input": "Can students learn through SafeX?",
+    "expected_answer_id": 94
+  },
+  {
+    "input": "What does 'Creating the Future, Not Just Predicting It' mean?",
+    "expected_answer_id": 95
+  },
+  {
+    "input": "Who is the President of the United States?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "What is the capital of France?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "Who won the FIFA World Cup 2022?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "How do I cook chicken biryani?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "Explain Newton's First Law.",
+    "expected_answer_id": null
+  },
+  {
+    "input": "What is ChatGPT?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "How can I learn Python programming?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "Who is the founder of Microsoft?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "What is the weather today?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "Show me today's cricket score.",
+    "expected_answer_id": null
+  },
+  {
+    "input": "How much is Bitcoin worth today?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "Book me a hotel in Dubai.",
+    "expected_answer_id": null
+  },
+  {
+    "input": "Translate 'Good Morning' into Spanish.",
+    "expected_answer_id": null
+  },
+  {
+    "input": "Who invented the telephone?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "What is the formula for the area of a circle?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "Tell me a funny joke.",
+    "expected_answer_id": null
+  },
+  {
+    "input": "How do I lose weight fast?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "What are the symptoms of malaria?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "Recommend a good Netflix movie.",
+    "expected_answer_id": null
+  },
+  {
+    "input": "How can I earn money online?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "How do I install Windows 11?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "What is machine learning?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "Explain blockchain technology.",
+    "expected_answer_id": null
+  },
+  {
+    "input": "What is cloud computing?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "How do I create a mobile app?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "Which programming language is best for AI?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "What is SQL?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "How do I hack a Wi-Fi password?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "What is the difference between Java and Python?",
+    "expected_answer_id": null
+  },
+  {
+    "input": "Explain artificial intelligence in simple words.",
+    "expected_answer_id": null
   }
 ]

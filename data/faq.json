@@ -1,14 +1,572 @@
 [
   {
-    "id": "faq_01",
-    "category": "General",
+    "id": 1,
+    "category": "Company",
     "question": "What is SafeX Solutions?",
-    "answer": "SafeX Solutions is a technology firm guiding academic and professional AI/ML internship cohorts."
+    "answer": "SafeX Solutions is a global technology and digital solutions company that provides IT services, cybersecurity, digital marketing, creative media, and workforce development solutions."
   },
   {
-    "id": "faq_02",
-    "category": "General",
-    "question": "Who is the founder of SafeX Solutions?",
-    "answer": "SafeX Solutions was founded by Ateeq Ullah."
+    "id": 2,
+    "category": "Company",
+    "question": "What does SafeX Solutions do?",
+    "answer": "SafeX Solutions helps businesses grow through technology solutions, cybersecurity, cloud services, web development, digital marketing, and creative media services."
+  },
+  {
+    "id": 3,
+    "category": "Company",
+    "question": "Which industries does SafeX Solutions serve?",
+    "answer": "SafeX Solutions works with startups, small businesses, and enterprises by delivering customized technology and digital solutions."
+  },
+  {
+    "id": 4,
+    "category": "Company",
+    "question": "Is SafeX Solutions a global company?",
+    "answer": "Yes. SafeX Solutions serves clients in more than 15 countries worldwide."
+  },
+  {
+    "id": 5,
+    "category": "About",
+    "question": "What makes SafeX Solutions different?",
+    "answer": "SafeX Solutions combines technology, cybersecurity, digital marketing, and creative media services under one company while focusing on innovation, transparency, and customer success."
+  },
+  {
+    "id": 6,
+    "category": "About",
+    "question": "What are the core values of SafeX Solutions?",
+    "answer": "SafeX Solutions emphasizes innovation, transparency, customer success, responsible leadership, and long-term digital growth."
+  },
+  {
+    "id": 7,
+    "category": "About",
+    "question": "Who does SafeX Solutions work with?",
+    "answer": "SafeX Solutions collaborates with startups, small businesses, and enterprises by providing tailored and scalable digital solutions."
+  },
+  {
+    "id": 8,
+    "category": "Mission",
+    "question": "What is the mission of SafeX Solutions?",
+    "answer": "The mission of SafeX Solutions is to empower skilled and driven young professionals through technology, leadership, mentorship, and real-world opportunities."
+  },
+  {
+    "id": 9,
+    "category": "Mission",
+    "question": "How does SafeX Solutions support young professionals?",
+    "answer": "SafeX Solutions offers structured training, mentorship, internships, leadership opportunities, and professional development programs."
+  },
+  {
+    "id": 10,
+    "category": "Mission",
+    "question": "Does SafeX Solutions contribute to social impact?",
+    "answer": "Yes. SafeX Solutions states that 50% of its profits are reinvested into an independent Trust that supports education, technology advancement, job creation, and youth-led innovation."
+  },
+  {
+    "id": 11,
+    "category": "Mission",
+    "question": "What is the vision behind SafeX Solutions?",
+    "answer": "SafeX Solutions aims to build a future-ready ecosystem that empowers people, strengthens economies, and advances technology worldwide."
+  },
+  {
+    "id": 12,
+    "category": "Company",
+    "question": "What is the slogan of SafeX Solutions?",
+    "answer": "SafeX Solutions uses the slogan: 'Securing Technology. Powering Growth. Creating Impact.'"
+  },
+  {
+    "id": 13,
+    "category": "About",
+    "question": "What type of solutions does SafeX Solutions provide?",
+    "answer": "SafeX Solutions provides secure, scalable, and customized technology and digital solutions designed to meet the unique goals of each client."
+  },
+  {
+    "id": 14,
+    "category": "Mission",
+    "question": "Why was SafeX Solutions established?",
+    "answer": "SafeX Solutions was established to combine technology, leadership, and innovation while creating opportunities for youth and supporting sustainable economic growth."
+  },
+  {
+    "id": 15,
+    "category": "About",
+    "question": "What is the long-term goal of SafeX Solutions?",
+    "answer": "The long-term goal of SafeX Solutions is to deliver innovative technology solutions while empowering future leaders and creating positive social impact."
+  },
+  {
+    "id": 16,
+    "category": "Services",
+    "question": "What services does SafeX Solutions offer?",
+    "answer": "SafeX Solutions offers technology and IT solutions, cybersecurity, cloud solutions, web development, digital marketing, creative media, IT consulting, and workforce development services."
+  },
+  {
+    "id": 17,
+    "category": "Technology",
+    "question": "Does SafeX Solutions provide web development services?",
+    "answer": "Yes. SafeX Solutions develops corporate websites, eCommerce platforms, and custom web applications."
+  },
+  {
+    "id": 18,
+    "category": "Technology",
+    "question": "Does SafeX Solutions build custom web applications?",
+    "answer": "Yes. SafeX Solutions designs and develops custom web applications tailored to business requirements."
+  },
+  {
+    "id": 19,
+    "category": "Technology",
+    "question": "Does SafeX Solutions provide cloud solutions?",
+    "answer": "Yes. SafeX Solutions offers cloud solutions and system integration services for secure and scalable business operations."
+  },
+  {
+    "id": 20,
+    "category": "Cybersecurity",
+    "question": "Does SafeX Solutions offer cybersecurity services?",
+    "answer": "Yes. SafeX Solutions provides cybersecurity and data protection services to help secure business systems and digital assets."
+  },
+  {
+    "id": 21,
+    "category": "Technology",
+    "question": "Does SafeX Solutions provide network infrastructure services?",
+    "answer": "Yes. SafeX Solutions offers network infrastructure setup, IT management, and technology support services."
+  },
+  {
+    "id": 22,
+    "category": "Technology",
+    "question": "Does SafeX Solutions provide IT consulting?",
+    "answer": "Yes. SafeX Solutions offers IT consulting and digital transformation services for businesses."
+  },
+  {
+    "id": 23,
+    "category": "Marketing",
+    "question": "Does SafeX Solutions provide digital marketing services?",
+    "answer": "Yes. SafeX Solutions provides digital marketing strategies that improve online visibility, engagement, and business growth."
+  },
+  {
+    "id": 24,
+    "category": "Marketing",
+    "question": "Does SafeX Solutions offer SEO services?",
+    "answer": "Yes. SafeX Solutions provides Search Engine Optimization (SEO) and performance marketing services."
+  },
+  {
+    "id": 25,
+    "category": "Marketing",
+    "question": "Does SafeX Solutions manage social media?",
+    "answer": "Yes. SafeX Solutions offers social media management and content strategy services."
+  },
+  {
+    "id": 26,
+    "category": "Marketing",
+    "question": "Does SafeX Solutions provide branding services?",
+    "answer": "Yes. SafeX Solutions offers branding, identity design, and creative direction services."
+  },
+  {
+    "id": 27,
+    "category": "Marketing",
+    "question": "Does SafeX Solutions help generate business leads?",
+    "answer": "Yes. SafeX Solutions provides lead generation and marketing automation solutions."
+  },
+  {
+    "id": 28,
+    "category": "Marketing",
+    "question": "Does SafeX Solutions provide analytics services?",
+    "answer": "Yes. SafeX Solutions offers analytics and growth optimization services to improve marketing performance."
+  },
+  {
+    "id": 29,
+    "category": "Creative Media",
+    "question": "Does SafeX Solutions offer photography services?",
+    "answer": "Yes. SafeX Solutions provides professional photography and commercial shoot services."
+  },
+  {
+    "id": 30,
+    "category": "Creative Media",
+    "question": "Does SafeX Solutions provide videography services?",
+    "answer": "Yes. SafeX Solutions offers videography and corporate film production services."
+  },
+  {
+    "id": 31,
+    "category": "Creative Media",
+    "question": "Can SafeX Solutions create promotional content?",
+    "answer": "Yes. SafeX Solutions creates product, event, and promotional media content."
+  },
+  {
+    "id": 32,
+    "category": "Creative Media",
+    "question": "Does SafeX Solutions provide video editing services?",
+    "answer": "Yes. SafeX Solutions offers post-production and creative editing services."
+  },
+  {
+    "id": 33,
+    "category": "Creative Media",
+    "question": "Does SafeX Solutions develop visual campaigns?",
+    "answer": "Yes. SafeX Solutions develops visual campaigns to strengthen brand communication and engagement."
+  },
+  {
+    "id": 34,
+    "category": "Services",
+    "question": "Are SafeX Solutions services suitable for startups?",
+    "answer": "Yes. SafeX Solutions provides scalable solutions for startups, small businesses, and enterprises."
+  },
+  {
+    "id": 35,
+    "category": "Services",
+    "question": "Can SafeX Solutions provide multiple services under one project?",
+    "answer": "Yes. SafeX Solutions offers integrated technology, marketing, and creative services through a single team."
+  },
+  {
+    "id": 36,
+    "category": "Internship",
+    "question": "Does SafeX Solutions offer internship programs?",
+    "answer": "Yes. SafeX Solutions offers internship programs designed to provide students and fresh graduates with practical industry experience."
+  },
+  {
+    "id": 37,
+    "category": "Internship",
+    "question": "Who can apply for a SafeX Solutions internship?",
+    "answer": "Students, fresh graduates, and motivated individuals looking to gain practical skills and professional experience can apply for internship opportunities."
+  },
+  {
+    "id": 38,
+    "category": "Training",
+    "question": "Does SafeX Solutions provide professional training?",
+    "answer": "Yes. SafeX Solutions provides professional training, technical skills development, certification programs, and workshops."
+  },
+  {
+    "id": 39,
+    "category": "Training",
+    "question": "What types of training programs are available?",
+    "answer": "SafeX Solutions offers technical skills training, certification programs, digital marketing workshops, creative workshops, leadership development, and mentorship."
+  },
+  {
+    "id": 40,
+    "category": "Career",
+    "question": "Does SafeX Solutions provide mentorship?",
+    "answer": "Yes. SafeX Solutions provides mentorship to help interns and young professionals develop practical and professional skills."
+  },
+  {
+    "id": 41,
+    "category": "Career",
+    "question": "Does SafeX Solutions support career development?",
+    "answer": "Yes. SafeX Solutions supports career development through internships, mentorship, leadership opportunities, and professional training."
+  },
+  {
+    "id": 42,
+    "category": "Career",
+    "question": "Does SafeX Solutions provide leadership development programs?",
+    "answer": "Yes. Leadership and professional development programs are part of SafeX Solutions' workforce development initiatives."
+  },
+  {
+    "id": 43,
+    "category": "Contact",
+    "question": "How can I contact SafeX Solutions?",
+    "answer": "You can contact SafeX Solutions by email at contact@safexsolutions.com or by phone at +92 327 5781580."
+  },
+  {
+    "id": 44,
+    "category": "Contact",
+    "question": "What is the email address of SafeX Solutions?",
+    "answer": "The official contact email of SafeX Solutions is contact@safexsolutions.com."
+  },
+  {
+    "id": 45,
+    "category": "Contact",
+    "question": "What is the phone number of SafeX Solutions?",
+    "answer": "The official phone number of SafeX Solutions is +92 327 5781580."
+  },
+  {
+    "id": 46,
+    "category": "Contact",
+    "question": "Where is SafeX Solutions located?",
+    "answer": "SafeX Solutions is located at E-9, Islamabad, Pakistan."
+  },
+  {
+    "id": 47,
+    "category": "Contact",
+    "question": "What are the working hours of SafeX Solutions?",
+    "answer": "SafeX Solutions operates from Monday to Friday, 9:00 AM to 6:00 PM."
+  },
+  {
+    "id": 48,
+    "category": "Support",
+    "question": "Can I contact SafeX Solutions through the website?",
+    "answer": "Yes. SafeX Solutions provides a contact form on its website where visitors can submit inquiries."
+  },
+  {
+    "id": 49,
+    "category": "Support",
+    "question": "Can businesses request customized solutions?",
+    "answer": "Yes. SafeX Solutions provides customized technology and digital solutions based on client requirements."
+  },
+  {
+    "id": 50,
+    "category": "Support",
+    "question": "Does SafeX Solutions provide support after project completion?",
+    "answer": "Yes. SafeX Solutions emphasizes reliable support and long-term client relationships."
+  },
+  {
+    "id": 51,
+    "category": "Internship",
+    "question": "Do interns receive practical project experience?",
+    "answer": "Yes. SafeX Solutions focuses on providing real-world project experience and industry-relevant skill development."
+  },
+  {
+    "id": 52,
+    "category": "Training",
+    "question": "Does SafeX Solutions offer certification programs?",
+    "answer": "Yes. Technical skills training and certification programs are part of SafeX Solutions' workforce development services."
+  },
+  {
+    "id": 53,
+    "category": "Career",
+    "question": "Does SafeX Solutions provide career pathways?",
+    "answer": "Yes. SafeX Solutions helps participants build career pathways through internships, mentorship, and professional development."
+  },
+  {
+    "id": 54,
+    "category": "Support",
+    "question": "Can startups work with SafeX Solutions?",
+    "answer": "Yes. SafeX Solutions works with startups, small businesses, and enterprises by providing scalable digital solutions."
+  },
+  {
+    "id": 55,
+    "category": "Support",
+    "question": "How can I send a business inquiry?",
+    "answer": "You can send a business inquiry through the contact form on the SafeX Solutions website or by emailing contact@safexsolutions.com."
+  },
+  {
+    "id": 56,
+    "category": "Clients",
+    "question": "Who are the clients of SafeX Solutions?",
+    "answer": "SafeX Solutions serves startups, small businesses, and enterprises across multiple industries with customized digital solutions."
+  },
+  {
+    "id": 57,
+    "category": "Clients",
+    "question": "Does SafeX Solutions work with international clients?",
+    "answer": "Yes. SafeX Solutions provides technology and digital services to clients in more than 15 countries."
+  },
+  {
+    "id": 58,
+    "category": "Business",
+    "question": "Does SafeX Solutions provide customized solutions?",
+    "answer": "Yes. Every solution is designed according to the client's business goals, technical requirements, and growth objectives."
+  },
+  {
+    "id": 59,
+    "category": "Business",
+    "question": "Can small businesses hire SafeX Solutions?",
+    "answer": "Yes. SafeX Solutions provides scalable services suitable for startups, small businesses, and growing enterprises."
+  },
+  {
+    "id": 60,
+    "category": "Projects",
+    "question": "Does SafeX Solutions handle complete digital projects?",
+    "answer": "Yes. SafeX Solutions manages projects from planning and development to deployment, marketing, and ongoing support."
+  },
+  {
+    "id": 61,
+    "category": "Projects",
+    "question": "Can SafeX Solutions manage long-term projects?",
+    "answer": "Yes. SafeX Solutions supports both short-term and long-term business technology projects."
+  },
+  {
+    "id": 62,
+    "category": "Process",
+    "question": "How does SafeX Solutions start a new project?",
+    "answer": "Projects begin by understanding the client's requirements, business goals, and technical needs before proposing a suitable solution."
+  },
+  {
+    "id": 63,
+    "category": "Process",
+    "question": "Does SafeX Solutions analyze client requirements before development?",
+    "answer": "Yes. Requirement analysis is an important part of the project planning process."
+  },
+  {
+    "id": 64,
+    "category": "Process",
+    "question": "Does SafeX Solutions provide scalable solutions?",
+    "answer": "Yes. Solutions are designed to be secure, scalable, and adaptable to future business growth."
+  },
+  {
+    "id": 65,
+    "category": "Technology",
+    "question": "Does SafeX Solutions focus on secure technology solutions?",
+    "answer": "Yes. Security is integrated into technology solutions through cybersecurity and data protection practices."
+  },
+  {
+    "id": 66,
+    "category": "Business",
+    "question": "Why should businesses choose SafeX Solutions?",
+    "answer": "SafeX Solutions combines technology, marketing, cybersecurity, and creative services under one trusted partner."
+  },
+  {
+    "id": 67,
+    "category": "Support",
+    "question": "Can clients request a consultation before starting a project?",
+    "answer": "Yes. Businesses can contact SafeX Solutions to discuss their requirements before beginning a project."
+  },
+  {
+    "id": 68,
+    "category": "Support",
+    "question": "How can businesses request a quotation?",
+    "answer": "Businesses can contact SafeX Solutions through the website contact form or official email to request a quotation."
+  },
+  {
+    "id": 69,
+    "category": "Projects",
+    "question": "Does SafeX Solutions deliver end-to-end digital solutions?",
+    "answer": "Yes. SafeX Solutions provides end-to-end technology, marketing, and creative solutions."
+  },
+  {
+    "id": 70,
+    "category": "Projects",
+    "question": "Can SafeX Solutions manage multiple services within one project?",
+    "answer": "Yes. Clients can combine web development, cybersecurity, marketing, branding, and creative media services in one project."
+  },
+  {
+    "id": 71,
+    "category": "Business",
+    "question": "Does SafeX Solutions focus on long-term client relationships?",
+    "answer": "Yes. The company emphasizes reliable support, transparency, and long-term partnerships."
+  },
+  {
+    "id": 72,
+    "category": "Clients",
+    "question": "Can enterprise organizations work with SafeX Solutions?",
+    "answer": "Yes. Enterprise organizations can receive customized and scalable technology solutions."
+  },
+  {
+    "id": 73,
+    "category": "Technology",
+    "question": "Does SafeX Solutions provide modern technology solutions?",
+    "answer": "Yes. SafeX Solutions focuses on modern, secure, and scalable technology solutions for businesses."
+  },
+  {
+    "id": 74,
+    "category": "Support",
+    "question": "Can clients discuss project requirements before signing an agreement?",
+    "answer": "Yes. SafeX Solutions encourages clients to discuss their project needs before development begins."
+  },
+  {
+    "id": 75,
+    "category": "Support",
+    "question": "How can I get started with SafeX Solutions?",
+    "answer": "You can get started by contacting SafeX Solutions through the official website, email, or phone to discuss your project requirements."
+  },
+  {
+    "id": 76,
+    "category": "Innovation",
+    "question": "What is the vision of SafeX Solutions for the future?",
+    "answer": "SafeX Solutions aims to build a future-ready ecosystem through technology, innovation, leadership, and sustainable digital transformation."
+  },
+  {
+    "id": 77,
+    "category": "Innovation",
+    "question": "How does SafeX Solutions create impact?",
+    "answer": "SafeX Solutions creates impact by delivering innovative technology solutions while investing in education, workforce development, and youth leadership."
+  },
+  {
+    "id": 78,
+    "category": "Innovation",
+    "question": "Does SafeX Solutions promote innovation?",
+    "answer": "Yes. Innovation is one of the company's core principles, guiding the development of secure, scalable, and modern digital solutions."
+  },
+  {
+    "id": 79,
+    "category": "Workforce Development",
+    "question": "Why does SafeX Solutions invest in workforce development?",
+    "answer": "SafeX Solutions invests in workforce development to prepare skilled professionals through training, mentorship, and real-world industry experience."
+  },
+  {
+    "id": 80,
+    "category": "Workforce Development",
+    "question": "Does SafeX Solutions provide industry-aligned training?",
+    "answer": "Yes. The company offers industry-aligned training programs designed to prepare participants for modern careers."
+  },
+  {
+    "id": 81,
+    "category": "Workforce Development",
+    "question": "What benefits do interns receive at SafeX Solutions?",
+    "answer": "Interns gain practical experience, mentorship, technical skills, teamwork experience, and exposure to real business projects."
+  },
+  {
+    "id": 82,
+    "category": "Technology",
+    "question": "Does SafeX Solutions use modern technologies?",
+    "answer": "Yes. SafeX Solutions develops secure and scalable solutions using modern technologies and industry best practices."
+  },
+  {
+    "id": 83,
+    "category": "Technology",
+    "question": "Does SafeX Solutions focus on digital transformation?",
+    "answer": "Yes. The company helps organizations modernize their operations through digital transformation and technology consulting."
+  },
+  {
+    "id": 84,
+    "category": "Technology",
+    "question": "Are SafeX Solutions' services scalable?",
+    "answer": "Yes. Solutions are designed to scale with business growth and changing operational needs."
+  },
+  {
+    "id": 85,
+    "category": "Technology",
+    "question": "Does SafeX Solutions prioritize data security?",
+    "answer": "Yes. Protecting business systems and digital assets through cybersecurity is one of the company's major priorities."
+  },
+  {
+    "id": 86,
+    "category": "Learning",
+    "question": "Does SafeX Solutions publish technology insights?",
+    "answer": "Yes. SafeX Solutions shares articles and updates covering technology trends, innovation, AI, cloud computing, and cybersecurity."
+  },
+  {
+    "id": 87,
+    "category": "Learning",
+    "question": "Where can I read SafeX Solutions' latest updates?",
+    "answer": "The latest company news and technology articles are available in the Insights section of the SafeX Solutions website."
+  },
+  {
+    "id": 88,
+    "category": "Learning",
+    "question": "Does SafeX Solutions share educational content?",
+    "answer": "Yes. SafeX Solutions provides educational content and technology insights to help businesses and professionals stay informed."
+  },
+  {
+    "id": 89,
+    "category": "Company",
+    "question": "What industries can benefit from SafeX Solutions?",
+    "answer": "Startups, small businesses, and enterprise organizations across various industries can benefit from SafeX Solutions' services."
+  },
+  {
+    "id": 90,
+    "category": "Company",
+    "question": "Does SafeX Solutions provide complete business solutions?",
+    "answer": "Yes. The company combines technology, marketing, cybersecurity, creative media, and consulting services under one organization."
+  },
+  {
+    "id": 91,
+    "category": "Company",
+    "question": "Can businesses grow with SafeX Solutions?",
+    "answer": "Yes. SafeX Solutions helps organizations improve their digital presence, security, operational efficiency, and long-term growth."
+  },
+  {
+    "id": 92,
+    "category": "Innovation",
+    "question": "How does SafeX Solutions support digital innovation?",
+    "answer": "The company combines advanced technology, skilled professionals, and innovative strategies to deliver measurable business outcomes."
+  },
+  {
+    "id": 93,
+    "category": "Company",
+    "question": "What is SafeX Solutions committed to?",
+    "answer": "SafeX Solutions is committed to innovation, transparency, customer success, and sustainable business growth."
+  },
+  {
+    "id": 94,
+    "category": "Learning",
+    "question": "Can students learn from SafeX Solutions?",
+    "answer": "Yes. Students can benefit from training programs, internships, mentorship, and educational resources offered by SafeX Solutions."
+  },
+  {
+    "id": 95,
+    "category": "Innovation",
+    "question": "What does the slogan 'Creating the Future, Not Just Predicting It' represent?",
+    "answer": "It reflects SafeX Solutions' commitment to building innovative technology solutions, developing future-ready talent, and creating long-term impact."
   }
 ]
