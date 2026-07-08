@@ -1,101 +1,116 @@
-# Portfolio Case Study: SafeX AI FAQ Chatbot
+# SafeX AI FAQ Chatbot — Case Study
 
-*Instructions: Replace the placeholders `[bracketed text]` with your team's specific contributions, details, and evaluation results. Address the guiding questions in each section to build a professional-grade portfolio case study.*
+*Prepared by: Ali Zaib (Technical Writer)*
+*Team: SafeX Solutions — Week 1 Internship Cohort*
 
 ---
 
-## 1. Project Overview & Context
-- **Company Name:** SafeX Solutions
-- **Project Duration:** [e.g. 1 Week, Week 1 Internship Task]
-- **Team Name/Cohort ID:** [e.g. Cohort Group 54]
-- **Core Technology Stack:** Python, Streamlit, Scikit-learn, Numpy, Pandas
+## 1. Executive Summary
 
-### Guiding Questions:
-*What was the corporate background of this task? Why did the company want to build this chatbot? What was the overall role of your team?*
+> *One paragraph, written last. Summarize the problem, the solution, and the outcome in plain language for a non-technical reader (e.g., a recruiter or client).*
+
+The SafeX AI FAQ Chatbot is a lightweight, fully local semantic search assistant that answers onboarding questions by matching user input against a verified knowledge base using TF-IDF vectorization and Cosine Similarity — with no external LLM API calls required.
 
 ---
 
 ## 2. Problem Statement
-- **Context:** [Describe the scenario, e.g. intern onboarding friction]
-- **The Challenge:** [Describe the problem, e.g. static documents, missing information, user confusion]
 
-### Guiding Questions:
-*What are the specific pain points of using static FAQ files? How does a semantic query interface improve team onboarding?*
-
----
-
-## 3. Objectives & Key Deliverables
-- **Objective 1:** [e.g. Build a modular query tool]
-- **Objective 2:** [e.g. Implement semantic keyword retrieval without external APIs]
-- **Objective 3:** [e.g. Enforce threshold guardrails to control false answers]
-
-### Guiding Questions:
-*What key performance indicators (accuracy, latency, user satisfaction) did the team aim to achieve?*
+- What onboarding/support pain point does this solve?
+- Who is the end user (new hires, customers, internal staff)?
+- Why a local/offline similarity model instead of a hosted LLM (cost, privacy, latency, simplicity)?
 
 ---
 
-## 4. Technical Architecture
-*Instructions: Explain the decoupling of database loading, feature vector calculations, workflow orchestration, and visualization UI.*
+## 3. Goals & Success Criteria
 
-### System Dataflow Design:
-```text
-  [ User Query ]
-        │
-        ▼
-  [ Preprocessing & Normalization ] (utils.py)
-        │
-        ▼
-  [ Vector Space Representation ] (similarity.py: TF-IDF Vectorizer)
-        │
-        ▼
-  [ Similarity Calculation ] (similarity.py: Cosine Similarity matrix math)
-        │
-        ▼
-  [ Decision Boundary Threshold Check ] (chatbot.py)
-   ├── Score >= Threshold ➔ Return Verified FAQ Answer
-   └── Score < Threshold  ➔ Return Fallback Warning
+| Goal | Metric | Target |
+|---|---|---|
+| Accurate FAQ matching | Precision on `evaluation/test_questions.json` | e.g. ≥ 90% |
+| Reject unrelated queries | Fallback trigger rate on negative test set | e.g. ≥ 95% |
+| Usability | Streamlit UI response time | < 1s |
+
+*(Fill in actual targets/results once Hammad's benchmarks are available.)*
+
+---
+
+## 4. System Architecture
+
+```
+User Query → Streamlit UI (app.py)
+           → Chatbot Orchestrator (chatbot.py)
+           → Knowledge Base Loader (knowledge_base.py) ← data/faq.json
+           → TF-IDF + Cosine Similarity Engine (similarity.py)
+           → Threshold Check → Best Match / Fallback Message
+           → Response rendered in UI
 ```
 
----
+**Component ownership:**
 
-## 5. Implementation Process
-*Instructions: Outline the specific development phases, what each team member built, and how components were integrated.*
-
-- **Data Engineering:** [Describe how the FAQ dataset JSON structure was designed and validated]
-- **Retrieval Engine:** [Describe the mathematical vector space calculation steps]
-- **User Interface:** [Describe how the Streamlit dashboard layout was styled]
-- **Integration & Testing:** [Describe the Git feature-branch workflow and unit tests]
-
----
-
-## 6. Benchmarking & Evaluation
-*Instructions: Fill in the benchmarking metrics recorded by the testing framework on your test question set.*
-
-| Evaluation Metric | Target Value | Achieved Value | Target Met? (Yes/No) |
-| :--- | :--- | :--- | :--- |
-| **Retrieval Accuracy** | [e.g. > 90%] | [Insert %] | [Yes/No] |
-| **Response Latency** | [e.g. < 50ms] | [Insert ms] | [Yes/No] |
-| **Fallback Success Rate** | [e.g. 100%] | [Insert %] | [Yes/No] |
-
-### Guiding Questions:
-*Describe how the decision threshold value was tuned. How did you balance true positives against false positives?*
+| Component | File | Owner |
+|---|---|---|
+| Data Loader | `src/knowledge_base.py` | Muhammad Wasim |
+| Similarity Engine | `src/similarity.py` | Muhammad Faozan Mujtaba |
+| Frontend/UI | `src/app.py` | Shahidullah |
+| FAQ Data & Test Set | `data/faq.json`, `evaluation/test_questions.json` | Ali Ammar Haider |
+| Orchestration | `src/chatbot.py` | Abdul Haseeb |
+| Testing | `tests/test_chatbot.py` | Hammad Abbas |
+| Architecture/Integration | Overall repo | Arsalan Qasim |
 
 ---
 
-## 7. Engineering Challenges & Solutions
-- **Challenge 1 (Keyword Overlap / Stop Words):** [Describe issue and how stop word filtering resolved it]
-- **Challenge 2 (Vocabulary Mismatch / Synonyms):** [Describe issue and how expanding database questions with synonyms resolved it]
+## 5. Technical Approach
+
+### 5.1 Knowledge Base
+- Structure of `faq.json` (question/answer pairs, categories if any).
+- Validation rules applied on load.
+
+### 5.2 TF-IDF Vectorization
+- Text normalization steps (lowercasing, stopword removal, tokenization).
+- Vocabulary size, vectorizer library used (e.g., scikit-learn's `TfidfVectorizer`).
+
+### 5.3 Cosine Similarity Matching
+- How the query vector is compared against the FAQ matrix.
+- How the best match index is selected.
+
+### 5.4 Threshold / Fallback Logic
+- Minimum similarity score required to return an answer.
+- Fallback message shown when no match clears the threshold.
 
 ---
 
-## 8. Lessons Learned & Key Takeaways
-1. [Key takeaway about choosing local algorithm implementations over heavy external API networks]
-2. [Key takeaway about using a decoupled OOP architecture for team collaboration]
-3. [Key takeaway about the importance of benchmarking performance empirically]
+## 6. Evaluation & Results
+
+> *Pull actual numbers from `evaluation/test_questions.json` runs and Hammad's benchmark suite.*
+
+- Positive test accuracy: ___
+- Negative/fallback test accuracy: ___
+- Notable failure cases and why they occurred.
+- Screenshot(s) of the Streamlit dashboard showing match scores (place in `assets/screenshots/`).
 
 ---
 
-## 9. Media Showcase
-- **App Dashboard Screenshot:** `[Insert screenshot path/url here]`
-- **Evaluation Console Logs:** `[Insert screenshot path/url here]`
-- **Interactive App Demo:** `[Insert GIF path/url here]`
+## 7. Challenges & Learnings
+
+- Technical challenges (e.g., short-query ambiguity, synonym mismatches).
+- Team/process challenges (parallel development, merge conflicts, API contracts between modules).
+- What the team would do differently.
+
+---
+
+## 8. Future Improvements
+
+- TF-IDF n-grams for typo resilience.
+- Upgrading to lightweight transformer embeddings (BERT/MiniLM).
+- Automated interaction logging for analytics.
+
+---
+
+## 9. Appendix
+
+- Links: GitHub repo, live demo (if deployed).
+- Full team & role table (see README.md).
+- Glossary of terms (TF-IDF, Cosine Similarity, Threshold Boundary).
+
+---
+
+*Last updated: [DATE] — [YOUR NAME]*
