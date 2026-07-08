@@ -1,7 +1,11 @@
 # ==============================================================================
-# SafeX AI FAQ Chatbot - Similarity Engine (Skeleton)
+# SafeX AI FAQ Chatbot - Similarity Engine
 # ==============================================================================
 from typing import List, Tuple
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
 
 class FAQSimilarityModel:
     """
@@ -9,26 +13,20 @@ class FAQSimilarityModel:
     against incoming queries to identify closest matches.
     """
     def __init__(self):
-        """
-        TODO (Owner: Muhammad Faozan Mujtaba):
-        - Initialize term vector representation settings (e.g., TF-IDF Vectorizer).
-        """
-        self.questions = []
-        
+        self.vectorizer = TfidfVectorizer(lowercase=True, stop_words="english")
+        self.questions: List[str] = []
+        self.question_matrix = None
+
     def fit(self, questions: List[str]):
         """
         Fits the similarity model on the FAQ questions list.
 
         Parameters:
             questions (List[str]): List of all FAQ questions.
-
-        TODO (Owner: Muhammad Faozan Mujtaba):
-        - Train/fit vectorizer on the database.
-        - Create the reference embedding matrix.
         """
-        # TODO: Implement fitting/indexing logic here
-        pass
-        
+        self.questions = questions
+        self.question_matrix = self.vectorizer.fit_transform(questions)
+
     def find_best_match(self, query: str) -> Tuple[int, float]:
         """
         Calculates cosine similarity and returns the best matching FAQ item.
@@ -38,11 +36,13 @@ class FAQSimilarityModel:
 
         Returns:
             Tuple[int, float]: index of the matched question and its similarity score.
-
-        TODO (Owner: Muhammad Faozan Mujtaba):
-        - Transform user query to vector space.
-        - Compute Cosine Similarity between query and reference matrix.
-        - Return max score index and similarity score value.
         """
-        # TODO: Implement similarity calculation logic here
-        return 0, 0.0
+        if self.question_matrix is None or not self.questions:
+            return -1, 0.0
+
+        query_vector = self.vectorizer.transform([query])
+        scores = cosine_similarity(query_vector, self.question_matrix)[0]
+
+        best_index = int(scores.argmax())
+        best_score = float(scores[best_index])
+        return best_index, best_score
