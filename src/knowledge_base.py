@@ -1,24 +1,29 @@
 # ==============================================================================
 # SafeX AI FAQ Chatbot - Knowledge Base Loader (Skeleton)
 # ==============================================================================
+
+import json
 from pathlib import Path
 from typing import List, Dict
 
 def load_faq_data(filepath: Path) -> List[Dict[str, str]]:
-    """
-    Loads and parses the FAQ dataset from a JSON file.
+    if not filepath.exists():
+        raise FileNotFoundError(f"FAQ file not found: {filepath}")
 
-    Parameters:
-        filepath (Path): Absolute or relative path to data/faq.json.
+    try:
+        with open(filepath, "r", encoding="utf-8") as file:
+            data = json.load(file)
 
-    Returns:
-        List[Dict[str, str]]: A list of validated QA pairs.
+        validated = []
 
-    TODO (Owner: Muhammad Wasim):
-    - Verify file existence at target path.
-    - Read and decode the JSON file.
-    - Validate that each entry has 'question' and 'answer' keys.
-    - Handle JSON formatting and file missing errors.
-    """
-    # TODO: Implement loading and validation logic here
-    return []
+        for item in data:
+            if "question" in item and "answer" in item:
+                validated.append({
+                    "question": item["question"],
+                    "answer": item["answer"]
+                })
+
+        return validated
+
+    except json.JSONDecodeError:
+        raise ValueError("Invalid JSON format.")
