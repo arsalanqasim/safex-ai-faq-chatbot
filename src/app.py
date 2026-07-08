@@ -7,6 +7,12 @@
 # Author     : Frontend Engineering Team
 # ==============================================================================
 
+import os
+import sys
+
+# Ensure the project root directory is in the python path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import time
 import uuid
 from datetime import datetime
@@ -1241,13 +1247,11 @@ def render_typing_animation(placeholder, final_text: str) -> None:
 
 
 def scroll_to_bottom() -> None:
-    """Inject a tiny invisible iframe that auto-scrolls the page to
+    """Inject a tiny invisible HTML component that auto-scrolls the page to
     the bottom, keeping the latest message in view.
-
-    Uses st.iframe instead of the deprecated st.components.v1.html.
     """
-    st.iframe(
-        html="""
+    st.components.v1.html(
+        """
         <script>
             var mainEl = window.parent.document.querySelector('section.main');
             if (mainEl) { mainEl.scrollTo({top: mainEl.scrollHeight, behavior: 'smooth'}); }
