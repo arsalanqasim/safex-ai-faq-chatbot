@@ -96,7 +96,7 @@ def init_session_state() -> None:
         st.session_state.theme = "Dark"
 
     if "threshold" not in st.session_state:
-        st.session_state.threshold = 0.60
+        st.session_state.threshold = 0.30
 
     if "search_term" not in st.session_state:
         st.session_state.search_term = ""
@@ -193,78 +193,79 @@ def inject_css(theme: str) -> None:
 
     if theme == "Dark":
         vars_css = """
-        --bg-app:#0F172A;
-        --bg-app-2:#1E293B;
-        --bg-sidebar:#020617;
-        --bg-sidebar-hover:#0B1220;
-        --bg-sidebar-active:rgba(59,130,246,0.15);
-        --border-soft:#334155;
-        --border-strong:#475569;
-        --text-primary:#F8FAFC;
-        --text-secondary:#CBD5E1;
-        --text-muted:#94A3B8;
-        --bubble-user-bg:#2563EB;
+        --bg-app:#0D1117;
+        --bg-app-2:#161B22;
+        --bg-sidebar:#010409;
+        --bg-sidebar-hover:#161B22;
+        --bg-sidebar-active:rgba(56,139,253,0.12);
+        --border-soft:#21262D;
+        --border-strong:#30363D;
+        --text-primary:#E6EDF3;
+        --text-secondary:#8B949E;
+        --text-muted:#484F58;
+        --bubble-user-bg:#1F6FEB;
         --bubble-user-text:#FFFFFF;
-        --bubble-bot-bg:#1E293B;
-        --bubble-bot-border:#334155;
-        --bubble-bot-text:#F8FAFC;
-        --accent:#3B82F6;
-        --accent-hover:#2563EB;
-        --accent-soft:rgba(59,130,246,0.15);
-        --card-bg:#1E293B;
-        --card-border:#334155;
-        --success:#10B981;
-        --warning:#F59E0B;
-        --error:#EF4444;
-        --shadow-soft:0 8px 24px rgba(0,0,0,0.35);
-        --shadow-card:0 4px 14px rgba(0,0,0,0.28);
-        --shadow-btn:0 6px 18px rgba(37,99,235,0.35);
-        --glass-bg:rgba(2,6,23,0.72);
-        --scrollbar-thumb:#334155;
+        --bubble-bot-bg:#161B22;
+        --bubble-bot-border:#21262D;
+        --bubble-bot-text:#E6EDF3;
+        --accent:#388BFD;
+        --accent-hover:#1F6FEB;
+        --accent-soft:rgba(56,139,253,0.1);
+        --card-bg:#161B22;
+        --card-border:#21262D;
+        --success:#3FB950;
+        --warning:#D29922;
+        --error:#F85149;
+        --shadow-soft:0 8px 32px rgba(1,4,9,0.6);
+        --shadow-card:0 2px 8px rgba(1,4,9,0.5);
+        --shadow-btn:0 4px 14px rgba(31,111,235,0.4);
+        --glass-bg:rgba(1,4,9,0.85);
+        --scrollbar-thumb:#21262D;
         """
     else:
         vars_css = """
-        --bg-app:#F8FAFC;
-        --bg-app-2:#F1F5F9;
-        --bg-sidebar:#FFFFFF;
-        --bg-sidebar-hover:#F1F5F9;
-        --bg-sidebar-active:rgba(37,99,235,0.08);
-        --border-soft:#E2E8F0;
-        --border-strong:#CBD5E1;
-        --text-primary:#0F172A;
-        --text-secondary:#64748B;
-        --text-muted:#94A3B8;
-        --bubble-user-bg:#2563EB;
+        --bg-app:#FFFFFF;
+        --bg-app-2:#F6F8FA;
+        --bg-sidebar:#F6F8FA;
+        --bg-sidebar-hover:#EAEEF2;
+        --bg-sidebar-active:rgba(9,105,218,0.08);
+        --border-soft:#D0D7DE;
+        --border-strong:#BCC0C5;
+        --text-primary:#1F2328;
+        --text-secondary:#656D76;
+        --text-muted:#9198A1;
+        --bubble-user-bg:#0969DA;
         --bubble-user-text:#FFFFFF;
-        --bubble-bot-bg:#FFFFFF;
-        --bubble-bot-border:#E2E8F0;
-        --bubble-bot-text:#0F172A;
-        --accent:#2563EB;
-        --accent-hover:#1D4ED8;
-        --accent-soft:rgba(37,99,235,0.08);
+        --bubble-bot-bg:#F6F8FA;
+        --bubble-bot-border:#D0D7DE;
+        --bubble-bot-text:#1F2328;
+        --accent:#0969DA;
+        --accent-hover:#0860CA;
+        --accent-soft:rgba(9,105,218,0.08);
         --card-bg:#FFFFFF;
-        --card-border:#E2E8F0;
-        --success:#10B981;
-        --warning:#F59E0B;
-        --error:#EF4444;
-        --shadow-soft:0 4px 14px rgba(15,23,42,0.06);
-        --shadow-card:0 2px 8px rgba(15,23,42,0.05);
-        --shadow-btn:0 6px 16px rgba(37,99,235,0.22);
-        --glass-bg:rgba(255,255,255,0.78);
-        --scrollbar-thumb:#CBD5E1;
+        --card-border:#D0D7DE;
+        --success:#1A7F37;
+        --warning:#9A6700;
+        --error:#CF222E;
+        --shadow-soft:0 4px 16px rgba(31,35,40,0.08);
+        --shadow-card:0 1px 4px rgba(31,35,40,0.06);
+        --shadow-btn:0 4px 12px rgba(9,105,218,0.2);
+        --glass-bg:rgba(255,255,255,0.9);
+        --scrollbar-thumb:#D0D7DE;
         """
 
     st.markdown(
         f"""
         <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700&display=swap');
 
         :root {{
             {vars_css}
         }}
 
         html, body, [class*="css"] {{
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            -webkit-font-smoothing: antialiased;
         }}
 
         /* ---------- Hide default Streamlit chrome ---------- */
@@ -273,11 +274,6 @@ def inject_css(theme: str) -> None:
         div[data-testid="stDecoration"] {{ display: none; }}
         div[data-testid="stStatusWidget"] {{ display: none; }}
 
-        /* Keep the header bar itself (it contains the sidebar
-           expand/collapse arrow) fully intact and functional. Only the
-           "Deploy" button and the "⋮" menu are hidden individually, using
-           their own stable identifiers - never the shared toolbar
-           container, which is also where the sidebar toggle lives. */
         header[data-testid="stHeader"] {{
             background: transparent;
             box-shadow: none;
@@ -289,13 +285,6 @@ def inject_css(theme: str) -> None:
             display: none !important;
         }}
 
-        /* Sidebar collapse / expand arrows must always stay visible and
-           clickable - never touched by the rules above. Also force the
-           arrow icon's color so it's visible on light backgrounds too
-           (it defaults to a very pale color that disappears on white).
-           These selectors are intentionally broad/redundant since the
-           exact DOM testid for this control varies across Streamlit
-           versions - better to over-match than to miss it. */
         [data-testid="stSidebarCollapseButton"],
         [data-testid="collapsedControl"],
         [data-testid="stSidebarCollapsedControl"] {{
@@ -333,8 +322,6 @@ def inject_css(theme: str) -> None:
             fill: var(--accent) !important;
             stroke: var(--accent) !important;
         }}
-        /* Catch-all: if the arrow is a font glyph instead of an SVG,
-           `fill`/`stroke` won't touch it, but `color` will. */
         header[data-testid="stHeader"] *,
         [data-testid="stSidebarCollapseButton"] *,
         [data-testid="collapsedControl"] *,
@@ -342,27 +329,18 @@ def inject_css(theme: str) -> None:
             color: var(--text-primary) !important;
         }}
 
-        /* Sidebar: fixed usable width while expanded. When the user
-           collapses it, let Streamlit's default behavior take over so the
-           main content area reclaims the full page width instead of
-           leaving an empty gap. */
         section[data-testid="stSidebar"][aria-expanded="true"] {{
-            min-width: 300px !important;
-            max-width: 340px !important;
+            min-width: 260px !important;
+            max-width: 280px !important;
         }}
         section[data-testid="stSidebar"] {{
-            transition: min-width 0.2s ease, max-width 0.2s ease, margin-left 0.2s ease;
+            transition: min-width 0.2s ease, max-width 0.2s ease;
         }}
 
         .stApp {{
             background: var(--bg-app);
         }}
 
-        /* Safety-net default: ANY native Streamlit button (any "kind",
-           any nesting depth) starts themed correctly. More specific rules
-           below (accent buttons, sidebar rows, danger hovers, etc.) then
-           override this as needed. This prevents Streamlit's own default
-           button skin from ever showing through unstyled. */
         .stButton button,
         button[kind="secondary"],
         button[kind="primary"],
@@ -375,17 +353,11 @@ def inject_css(theme: str) -> None:
             color: inherit !important;
         }}
 
-        /* The fixed bottom bar wrapping the chat input must follow the
-           theme too - otherwise it defaults to Streamlit's own dark skin
-           regardless of the app's selected theme. */
         div[data-testid="stBottom"],
         div[data-testid="stBottomBlockContainer"] {{
             background: var(--bg-app) !important;
         }}
 
-        /* Global widget theming so every native Streamlit control
-           (expanders, sliders, radios, inputs, captions) follows the
-           selected theme instead of staying on Streamlit's own defaults. */
         [data-testid="stAppViewContainer"],
         [data-testid="stMain"],
         .main {{
@@ -402,8 +374,6 @@ def inject_css(theme: str) -> None:
             color: var(--text-muted) !important;
         }}
 
-        /* Text inputs (search box, rename box) everywhere, not just the
-           sidebar - fully themed background, border, text and caret. */
         input[type="text"], textarea {{
             background: var(--card-bg) !important;
             color: var(--text-primary) !important;
@@ -415,22 +385,22 @@ def inject_css(theme: str) -> None:
             opacity: 1 !important;
         }}
 
-        /* Expanders (Preferences / About) */
+        /* Expanders */
         div[data-testid="stExpander"] {{
             background: var(--card-bg) !important;
             border: 1px solid var(--card-border) !important;
-            border-radius: 14px !important;
-            box-shadow: var(--shadow-card);
+            border-radius: 8px !important;
+            box-shadow: none;
         }}
         div[data-testid="stExpander"] summary,
         div[data-testid="stExpander"] details,
         div[data-testid="stExpander"] > details > summary {{
             background: var(--card-bg) !important;
             color: var(--text-primary) !important;
-            border-radius: 14px !important;
+            border-radius: 8px !important;
         }}
         div[data-testid="stExpander"] summary:hover {{
-            color: var(--accent-hover) !important;
+            color: var(--accent) !important;
         }}
         div[data-testid="stExpander"] summary p,
         div[data-testid="stExpander"] summary span {{
@@ -448,8 +418,7 @@ def inject_css(theme: str) -> None:
             color: var(--text-secondary) !important;
         }}
 
-        /* Slider: track, filled portion, handle, and the min/max/value
-           numbers Streamlit renders above/below the handle. */
+        /* Slider */
         .stSlider [data-baseweb="slider"] > div {{
             background: var(--border-strong) !important;
         }}
@@ -466,7 +435,7 @@ def inject_css(theme: str) -> None:
             color: var(--text-primary) !important;
         }}
 
-        /* Radio buttons (theme selector) */
+        /* Radio buttons */
         .stRadio label, .stRadio p, .stRadio span {{
             color: var(--text-secondary) !important;
         }}
@@ -480,119 +449,115 @@ def inject_css(theme: str) -> None:
             background: var(--accent) !important;
         }}
 
-        /* Tooltips shown on hover */
+        /* Tooltips */
         div[data-baseweb="tooltip"] {{
-            background: var(--bg-sidebar-active) !important;
+            background: var(--card-bg) !important;
             color: var(--text-primary) !important;
+            border: 1px solid var(--border-soft) !important;
         }}
 
-        /* ---------- Scrollbars ---------- */
-        ::-webkit-scrollbar {{ width: 8px; height: 8px; }}
+        /* Scrollbars */
+        ::-webkit-scrollbar {{ width: 4px; height: 4px; }}
         ::-webkit-scrollbar-thumb {{
             background: var(--scrollbar-thumb);
-            border-radius: 10px;
+            border-radius: 4px;
         }}
         ::-webkit-scrollbar-track {{ background: transparent; }}
 
         .block-container {{
-            padding-top: 1.6rem;
+            padding-top: 1.4rem;
             padding-bottom: 6.5rem;
-            max-width: 880px;
+            max-width: 820px;
         }}
 
         /* ==========================================================
-           SIDEBAR
+           SIDEBAR — Minimal GitHub-inspired
         ========================================================== */
         section[data-testid="stSidebar"] {{
             background: var(--bg-sidebar);
             border-right: 1px solid var(--border-soft);
         }}
         section[data-testid="stSidebar"] .block-container {{
-            padding: 1.25rem 1rem 1.1rem 1rem;
+            padding: 1rem 0.85rem 1rem 0.85rem;
         }}
 
         .brand-wrap {{
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 2px 4px 18px 4px;
+            gap: 10px;
+            padding: 4px 2px 16px 2px;
             border-bottom: 1px solid var(--border-soft);
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }}
         .brand-icon {{
-            width: 40px; height: 40px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, var(--accent), #7c3aed);
+            width: 32px; height: 32px;
+            border-radius: 8px;
+            background: var(--accent);
             display: flex; align-items: center; justify-content: center;
-            font-size: 19px;
-            box-shadow: var(--shadow-btn);
+            font-size: 16px;
+            flex-shrink: 0;
         }}
         .brand-text-title {{
             color: var(--text-primary);
-            font-family: 'Manrope', sans-serif;
-            font-weight: 800;
-            font-size: 15.5px;
-            line-height: 1.15;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1.2;
             letter-spacing: -0.01em;
         }}
         .brand-text-sub {{
             color: var(--text-muted);
             font-size: 11px;
-            font-weight: 500;
-            margin-top: 2px;
+            font-weight: 400;
+            margin-top: 1px;
         }}
 
         .sidebar-section-label {{
             color: var(--text-muted);
-            font-size: 10.5px;
-            font-weight: 700;
-            letter-spacing: 0.09em;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            margin: 22px 4px 10px 4px;
+            margin: 20px 2px 8px 2px;
         }}
 
         /* New Chat button */
         .new-chat-btn button {{
             background: var(--accent) !important;
             color: #fff !important;
-            font-weight: 600 !important;
-            font-size: 13.5px !important;
+            font-weight: 500 !important;
+            font-size: 13px !important;
             border: none !important;
-            border-radius: 12px !important;
-            padding: 0.65rem 0.9rem !important;
-            box-shadow: var(--shadow-btn);
-            transition: all 0.25s ease !important;
+            border-radius: 6px !important;
+            padding: 0.5rem 0.8rem !important;
+            box-shadow: none !important;
+            transition: opacity 0.15s ease !important;
         }}
         .new-chat-btn button:hover {{
-            background: var(--accent-hover) !important;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 22px rgba(37,99,235,0.32);
+            opacity: 0.88 !important;
         }}
 
         /* Search input */
         section[data-testid="stSidebar"] input[type="text"] {{
-            background: var(--bg-app-2) !important;
+            background: var(--bg-app) !important;
             border: 1px solid var(--border-soft) !important;
             color: var(--text-primary) !important;
-            border-radius: 11px !important;
-            font-size: 13px !important;
-            transition: all 0.25s ease !important;
+            border-radius: 6px !important;
+            font-size: 12.5px !important;
+            transition: border-color 0.15s ease !important;
         }}
         section[data-testid="stSidebar"] input[type="text"]:focus {{
             border-color: var(--accent) !important;
-            box-shadow: 0 0 0 3px var(--accent-soft) !important;
+            box-shadow: 0 0 0 2px var(--accent-soft) !important;
         }}
 
         /* Chat history rows */
         .chat-row {{
             display: flex;
             align-items: center;
-            gap: 4px;
-            margin-bottom: 4px;
-            border-radius: 12px;
+            gap: 2px;
+            margin-bottom: 2px;
+            border-radius: 6px;
         }}
-        /* Vertically align every column in a sidebar chat row (title +
-           three-dot menu) so nothing looks offset. */
         section[data-testid="stSidebar"] div[data-testid="stHorizontalBlock"] {{
             align-items: center !important;
         }}
@@ -601,30 +566,30 @@ def inject_css(theme: str) -> None:
             align-items: center !important;
         }}
         section[data-testid="stSidebar"] .stButton button {{
-            background: transparent;
-            border: 1px solid transparent;
-            color: var(--text-secondary);
+            background: transparent !important;
+            border: 1px solid transparent !important;
+            color: var(--text-secondary) !important;
             text-align: left;
-            border-radius: 10px;
-            font-size: 13.2px;
-            font-weight: 500;
-            padding: 8px 10px;
-            transition: background-color 0.25s ease, color 0.25s ease;
+            border-radius: 6px;
+            font-size: 12.5px;
+            font-weight: 400;
+            padding: 6px 8px;
+            transition: background-color 0.12s ease, color 0.12s ease;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }}
         section[data-testid="stSidebar"] .stButton button:hover {{
-            background: var(--bg-sidebar-hover);
-            color: var(--text-primary);
+            background: var(--bg-sidebar-hover) !important;
+            color: var(--text-primary) !important;
         }}
         .chat-row.active .stButton button {{
             background: var(--bg-sidebar-active) !important;
             color: var(--accent) !important;
-            font-weight: 600 !important;
+            font-weight: 500 !important;
         }}
 
-        /* ---- Three-dot context menu (st.popover) ---- */
+        /* Three-dot context menu */
         .menu-trigger {{
             display: flex !important;
             align-items: center !important;
@@ -640,30 +605,25 @@ def inject_css(theme: str) -> None:
             background: transparent !important;
             border: 1px solid transparent !important;
             color: var(--text-muted) !important;
-            font-size: 15px !important;
-            font-weight: 700 !important;
-            width: 30px !important;
-            height: 30px !important;
-            min-width: 30px !important;
+            font-size: 13px !important;
+            font-weight: 600 !important;
+            width: 24px !important;
+            height: 24px !important;
+            min-width: 24px !important;
             padding: 0 !important;
             margin: 0 auto !important;
-            border-radius: 9px !important;
+            border-radius: 4px !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
             line-height: 1 !important;
-            transition: all 0.25s ease !important;
+            transition: all 0.15s ease !important;
         }}
         .menu-trigger div[data-testid="stPopover"] button:hover {{
-            color: var(--accent) !important;
+            color: var(--text-primary) !important;
             background: var(--bg-sidebar-hover) !important;
-            border-color: var(--border-soft) !important;
         }}
 
-        /* Popover panel itself: perfectly centered under the trigger,
-           proper width/padding, rounded corners, shadow, high z-index,
-           no clipping or overflow. Streamlit renders this via a floating
-           portal (BaseWeb popover), so we only need to style its body. */
         div[data-baseweb="popover"] {{
             z-index: 999999 !important;
         }}
@@ -671,10 +631,10 @@ def inject_css(theme: str) -> None:
         div[data-baseweb="popover"] > div > div {{
             background: var(--card-bg) !important;
             border: 1px solid var(--card-border) !important;
-            border-radius: 14px !important;
+            border-radius: 8px !important;
             box-shadow: var(--shadow-soft) !important;
-            padding: 6px !important;
-            min-width: 190px !important;
+            padding: 4px !important;
+            min-width: 160px !important;
             overflow: visible !important;
         }}
         div[data-testid="stPopoverBody"] .stButton button,
@@ -683,57 +643,56 @@ def inject_css(theme: str) -> None:
             border: none !important;
             color: var(--text-primary) !important;
             text-align: left !important;
-            font-size: 13.5px !important;
-            font-weight: 500 !important;
-            padding: 9px 12px !important;
-            border-radius: 10px !important;
+            font-size: 13px !important;
+            font-weight: 400 !important;
+            padding: 7px 10px !important;
+            border-radius: 6px !important;
             width: 100% !important;
-            transition: background-color 0.2s ease !important;
+            transition: background-color 0.12s ease !important;
         }}
         div[data-testid="stPopoverBody"] .stButton button:hover,
         [data-testid="stPopoverBody"] .stButton button:hover {{
             background: var(--bg-sidebar-hover) !important;
         }}
         .popover-danger .stButton button:hover {{
-            background: rgba(239, 68, 68, 0.1) !important;
+            background: rgba(248,81,73,0.08) !important;
             color: var(--error) !important;
         }}
 
         /* Settings expander */
         section[data-testid="stSidebar"] details {{
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            margin-bottom: 10px;
+            background: transparent;
+            border: 1px solid var(--border-soft);
+            border-radius: 6px;
+            margin-bottom: 8px;
         }}
         section[data-testid="stSidebar"] summary {{
-            color: var(--text-primary) !important;
-            font-size: 13.3px !important;
-            font-weight: 600 !important;
-            padding: 6px 4px;
-        }}
-
-        section[data-testid="stSidebar"] label {{
             color: var(--text-secondary) !important;
             font-size: 12.5px !important;
+            font-weight: 500 !important;
+            padding: 4px 2px;
+        }}
+        section[data-testid="stSidebar"] label {{
+            color: var(--text-secondary) !important;
+            font-size: 12px !important;
         }}
 
         /* Footer inside sidebar */
         .sidebar-footer {{
-            margin-top: 20px;
-            padding-top: 16px;
+            margin-top: 16px;
+            padding-top: 12px;
             border-top: 1px solid var(--border-soft);
             color: var(--text-muted);
-            font-size: 11px;
+            font-size: 10.5px;
             text-align: center;
         }}
 
         /* ==========================================================
-           HERO SECTION
+           HERO SECTION — Clean, minimal
         ========================================================== */
         .hero-wrap {{
             text-align: center;
-            padding: 20px 10px 30px 10px;
+            padding: 32px 10px 28px 10px;
         }}
         .hero-badge {{
             display: inline-flex;
@@ -741,32 +700,30 @@ def inject_css(theme: str) -> None:
             gap: 6px;
             background: var(--accent-soft);
             color: var(--accent);
-            font-size: 11.5px;
-            font-weight: 700;
-            letter-spacing: 0.04em;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
-            padding: 6px 14px;
+            padding: 4px 12px;
             border-radius: 999px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             border: 1px solid var(--accent-soft);
         }}
         .hero-title {{
-            font-family: 'Manrope', sans-serif;
-            font-size: 40px;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            line-height: 1.15;
-            background: linear-gradient(90deg, var(--text-primary) 30%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 12px;
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+            line-height: 1.2;
+            color: var(--text-primary);
+            margin-bottom: 10px;
         }}
         .hero-subtitle {{
-            font-size: 15.5px;
+            font-size: 14px;
             color: var(--text-secondary);
-            max-width: 560px;
+            max-width: 480px;
             margin: 0 auto;
-            line-height: 1.7;
+            line-height: 1.65;
+            font-weight: 400;
         }}
 
         /* ==========================================================
@@ -774,31 +731,29 @@ def inject_css(theme: str) -> None:
         ========================================================== */
         .suggested-label {{
             color: var(--text-muted);
-            font-size: 11px;
-            font-weight: 700;
+            font-size: 10px;
+            font-weight: 600;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            margin: 10px 2px 14px 2px;
+            margin: 8px 2px 12px 2px;
         }}
         div[data-testid="column"] .stButton button {{
             background: var(--card-bg) !important;
             border: 1px solid var(--card-border) !important;
             color: var(--text-primary) !important;
-            border-radius: 14px !important;
+            border-radius: 8px !important;
             text-align: left;
-            padding: 16px 18px;
-            font-size: 13.6px;
-            font-weight: 500;
+            padding: 12px 14px;
+            font-size: 13px;
+            font-weight: 400;
             width: 100%;
-            min-height: 72px;
-            box-shadow: var(--shadow-card);
-            transition: all 0.25s ease;
+            min-height: 64px;
+            box-shadow: none;
+            transition: border-color 0.15s ease, background 0.15s ease;
         }}
         div[data-testid="column"] .stButton button:hover {{
             border-color: var(--accent) !important;
             background: var(--bg-app-2) !important;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 28px rgba(37,99,235,0.15);
         }}
         div[data-testid="column"] .stButton button p {{
             color: var(--text-primary) !important;
@@ -809,33 +764,32 @@ def inject_css(theme: str) -> None:
         ========================================================== */
         .empty-state {{
             text-align: center;
-            padding: 34px 20px 12px 20px;
+            padding: 28px 20px 10px 20px;
             color: var(--text-muted);
         }}
         .empty-state .icon-circle {{
-            width: 56px; height: 56px;
-            border-radius: 16px;
-            margin: 0 auto 16px auto;
-            background: linear-gradient(135deg, var(--accent), #7c3aed);
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            margin: 0 auto 14px auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border-soft);
             display: flex; align-items: center; justify-content: center;
-            font-size: 26px;
-            box-shadow: var(--shadow-btn);
+            font-size: 20px;
         }}
-        .empty-state p {{ font-size: 13.5px; }}
+        .empty-state p {{ font-size: 13px; color: var(--text-muted); margin: 0; }}
 
         /* ==========================================================
-           CHAT MESSAGES (st.chat_message overrides)
+           CHAT MESSAGES
         ========================================================== */
         div[data-testid="stChatMessage"] {{
             background: transparent;
-            padding: 12px 4px;
-            margin-bottom: 6px;
-            border-radius: 16px;
-            animation: fadeInUp 0.35s ease;
+            padding: 8px 2px;
+            margin-bottom: 2px;
+            animation: msgIn 0.2s ease;
         }}
 
-        @keyframes fadeInUp {{
-            from {{ opacity: 0; transform: translateY(8px); }}
+        @keyframes msgIn {{
+            from {{ opacity: 0; transform: translateY(4px); }}
             to   {{ opacity: 1; transform: translateY(0); }}
         }}
 
@@ -846,11 +800,10 @@ def inject_css(theme: str) -> None:
         div[data-testid="stChatMessage"]:has(div[data-testid="chatAvatarIcon-user"]) .stMarkdown {{
             background: var(--bubble-user-bg);
             color: var(--bubble-user-text);
-            padding: 13px 18px;
-            border-radius: 18px 18px 4px 18px;
-            box-shadow: 0 6px 18px rgba(37,99,235,0.25);
-            max-width: 620px;
-            font-size: 14.5px;
+            padding: 10px 16px;
+            border-radius: 12px 12px 2px 12px;
+            max-width: 600px;
+            font-size: 14px;
             line-height: 1.6;
         }}
 
@@ -859,79 +812,74 @@ def inject_css(theme: str) -> None:
             background: var(--bubble-bot-bg);
             border: 1px solid var(--bubble-bot-border);
             color: var(--bubble-bot-text);
-            padding: 14px 19px;
-            border-radius: 18px 18px 18px 4px;
-            box-shadow: var(--shadow-card);
-            max-width: 640px;
-            font-size: 14.5px;
+            padding: 12px 16px;
+            border-radius: 12px 12px 12px 2px;
+            max-width: 620px;
+            font-size: 14px;
             line-height: 1.65;
         }}
 
         div[data-testid="chatAvatarIcon-user"] {{
             background: var(--accent) !important;
-            box-shadow: 0 4px 10px rgba(37,99,235,0.3);
+            border-radius: 6px !important;
         }}
         div[data-testid="chatAvatarIcon-assistant"] {{
-            background: linear-gradient(135deg, #8b5cf6, #6d28d9) !important;
-            box-shadow: 0 4px 10px rgba(124,58,237,0.3);
+            background: var(--card-bg) !important;
+            border: 1px solid var(--border-soft) !important;
+            border-radius: 6px !important;
         }}
 
         /* Typing indicator dots */
         .typing-dots span {{
             display: inline-block;
-            width: 6px; height: 6px;
+            width: 5px; height: 5px;
             margin-right: 3px;
             background: var(--text-muted);
             border-radius: 50%;
-            animation: blink 1.3s infinite ease-in-out both;
+            animation: blink 1.2s infinite ease-in-out both;
         }}
-        .typing-dots span:nth-child(1) {{ animation-delay: -0.28s; }}
-        .typing-dots span:nth-child(2) {{ animation-delay: -0.14s; }}
+        .typing-dots span:nth-child(1) {{ animation-delay: -0.24s; }}
+        .typing-dots span:nth-child(2) {{ animation-delay: -0.12s; }}
         @keyframes blink {{
-            0%, 80%, 100% {{ opacity: 0.25; transform: scale(0.85); }}
+            0%, 80%, 100% {{ opacity: 0.2; transform: scale(0.8); }}
             40% {{ opacity: 1; transform: scale(1); }}
         }}
 
         /* ==========================================================
-           CHAT INPUT (fixed bottom, glass effect)
+           CHAT INPUT
         ========================================================== */
         div[data-testid="stChatInput"] {{
             background: var(--glass-bg);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-top: 1px solid var(--border-soft);
-            padding: 14px 0 10px 0;
+            padding: 12px 0 8px 0;
         }}
         div[data-testid="stChatInput"] textarea {{
             background: var(--card-bg) !important;
-            border: 1.5px solid var(--border-soft) !important;
+            border: 1px solid var(--border-soft) !important;
             color: var(--text-primary) !important;
-            border-radius: 16px !important;
-            font-size: 14.5px !important;
-            box-shadow: var(--shadow-card);
-            transition: all 0.25s ease !important;
+            border-radius: 8px !important;
+            font-size: 14px !important;
+            transition: border-color 0.15s ease !important;
         }}
         div[data-testid="stChatInput"] textarea:focus {{
             border-color: var(--accent) !important;
-            box-shadow: 0 0 0 3px var(--accent-soft) !important;
+            box-shadow: 0 0 0 2px var(--accent-soft) !important;
         }}
         div[data-testid="stChatInput"] button {{
             background: var(--accent) !important;
-            border-radius: 12px !important;
-            transition: all 0.25s ease !important;
+            border-radius: 6px !important;
+            transition: opacity 0.15s ease !important;
         }}
         div[data-testid="stChatInput"] button:hover {{
-            background: var(--accent-hover) !important;
+            opacity: 0.85 !important;
         }}
 
-        /* Push Streamlit's fixed bottom input container up so our footer
-           bar can sit directly underneath it without overlapping. */
         div[data-testid="stBottom"] {{
-            bottom: 30px !important;
+            bottom: 28px !important;
         }}
 
-        /* Slim footer bar, pinned to the very bottom of the viewport,
-           directly below the chat input. */
         .pinned-footer {{
             position: fixed;
             left: 0;
@@ -939,25 +887,14 @@ def inject_css(theme: str) -> None:
             bottom: 0;
             z-index: 999999;
             text-align: center;
-            font-size: 11px;
+            font-size: 10.5px;
             color: var(--text-muted);
             background: var(--bg-app);
-            padding: 6px 0;
+            padding: 5px 0;
             border-top: 1px solid var(--border-soft);
         }}
 
-        /* ==========================================================
-           MISC
-        ========================================================== */
         hr {{ border-color: var(--border-soft); }}
-
-        .app-footer {{
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 11.5px;
-            padding: 18px 0 4px 0;
-        }}
-
         .stSlider [data-baseweb="slider"] {{ padding-top: 4px; }}
         </style>
         """,
