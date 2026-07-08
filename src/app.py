@@ -13,6 +13,10 @@ from datetime import datetime
 
 import streamlit as st
 
+from src.chatbot import FAQChatbot
+from src.config import FAQ_PATH
+
+
 # ==============================================================================
 # 1. PAGE CONFIGURATION
 # ==============================================================================
@@ -40,18 +44,25 @@ st.set_page_config(
 # Nothing else in this file needs to change.
 # ==============================================================================
 
+@st.cache_resource
+def get_chatbot_instance() -> FAQChatbot:
+    """Load and train the chatbot orchestrator exactly once using Streamlit caching."""
+    return FAQChatbot(FAQ_PATH)
+
 def get_chatbot_response(query: str, threshold: float) -> str:
     """
-    Placeholder chatbot response function.
+    Queries the actual backend similarity-based FAQ chatbot orchestrator.
 
     Args:
         query (str): The user's question.
         threshold (float): Similarity threshold from the sidebar slider.
 
     Returns:
-        str: The chatbot's answer (currently a static placeholder).
+        str: The chatbot's answer based on local knowledge retrieval.
     """
-    return "Backend integration pending."
+    bot = get_chatbot_instance()
+    response = bot.query(query, threshold)
+    return response["answer"]
 
 
 # ==============================================================================

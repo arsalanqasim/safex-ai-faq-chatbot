@@ -82,13 +82,11 @@ Responsibilities are divided to allow parallel implementation:
 
 | Team Member | Role | File / Component Ownership |
 | :--- | :--- | :--- |
-| **Arsalan Qasim** | **Leader / Integrator** | Project architecture, GitHub management, integration, documentation, and final testing. |
+| **Arsalan Qasim** | **Leader, Backend & QA Engineer** | Project architecture, GitHub management, integration, documentation, chatbot orchestration (`src/chatbot.py`), unit tests (`tests/test_chatbot.py`), and performance benchmarks. |
 | **Muhammad Wasim** | **Data Loader Dev** | Knowledge base module (`src/knowledge_base.py`). |
 | **Muhammad Faozan Mujtaba** | **Algorithm Dev** | Similarity algorithm (`src/similarity.py`). |
 | **Shahidullah** | **Frontend Dev** | Streamlit layout and dashboard visualizer (`src/app.py`). |
 | **Ali Ammar Haider** | **Data Architect** | FAQ data (`data/faq.json`) and test questions (`evaluation/test_questions.json`). |
-| **Abdul Haseeb** | **Backend Dev** | Chatbot orchestration and workflow routing (`src/chatbot.py`). |
-| **Hammad Abbas** | **QA / Test Engineer** | Writing unit tests (`tests/test_chatbot.py`) and performance benchmarks. |
 | **Ali Zaib** | **Technical Writer** | Case study layout (`docs/Case_Study.md`), guidelines, and assets. |
 
 ---

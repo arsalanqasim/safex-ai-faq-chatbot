@@ -4,9 +4,9 @@
 
 import json
 from pathlib import Path
-from typing import List, Dict
+from typing import List, Dict, Any
 
-def load_faq_data(filepath: Path) -> List[Dict[str, str]]:
+def load_faq_data(filepath: Path) -> List[Dict[str, Any]]:
     if not filepath.exists():
         raise FileNotFoundError(f"FAQ file not found: {filepath}")
 
@@ -19,6 +19,7 @@ def load_faq_data(filepath: Path) -> List[Dict[str, str]]:
         for item in data:
             if "question" in item and "answer" in item:
                 validated.append({
+                    "id": item.get("id"),
                     "question": item["question"],
                     "answer": item["answer"]
                 })
