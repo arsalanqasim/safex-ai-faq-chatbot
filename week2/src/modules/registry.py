@@ -26,7 +26,7 @@ MODULE_REGISTRY = {
             "difficulty": "Advanced",
             "tech": ["Python", "Pandas", "NumPy", "NLP libraries (spaCy/NLTK) / LLM API", "FastAPI/Streamlit", "Twilio / WhatsApp API"],
             "description": "Workflow that extracts invoice line items from natural language orders, compiles a professional PDF, saves records, and simulates client delivery.",
-            "import_path": "src.modules.week2.invoice_automation.ui",
+            "import_path": "src.modules.invoice_automation.ui",
             "icon": "📄"
         },
         "attendance": {
@@ -38,7 +38,7 @@ MODULE_REGISTRY = {
             "difficulty": "Advanced",
             "tech": ["Python", "Pandas", "NumPy", "Flask/FastAPI", "QR/Geofencing tracking logic"],
             "description": "Automated employee and intern attendance-tracking workflow supporting location-based or QR check-ins.",
-            "import_path": "src.modules.week2.attendance.ui",
+            "import_path": "src.modules.attendance.ui",
             "icon": "🕒"
         },
         "hr_proposal": {
@@ -50,7 +50,7 @@ MODULE_REGISTRY = {
             "difficulty": "Intermediate",
             "tech": ["Python", "Pandas", "NumPy", "LLM API / NLP", "Streamlit/FastAPI"],
             "description": "Automated onboarding pipeline and leave-request ticketing system template for corporate businesses.",
-            "import_path": "src.modules.week2.hr_proposal.ui",
+            "import_path": "src.modules.hr_proposal.ui",
             "icon": "📋"
         },
         "email_assistant": {
@@ -62,7 +62,7 @@ MODULE_REGISTRY = {
             "difficulty": "Advanced",
             "tech": ["Python", "Pandas / NumPy", "NLP (spaCy/NLTK) / LLM API", "Streamlit/FastAPI"],
             "description": "Automated response drafting assistant for common customer service and support email inquiries.",
-            "import_path": "src.modules.week2.email_assistant.ui",
+            "import_path": "src.modules.email_assistant.ui",
             "icon": "✉️"
         },
         "report_generator": {
@@ -74,7 +74,7 @@ MODULE_REGISTRY = {
             "difficulty": "Intermediate",
             "tech": ["Python", "Pandas", "NumPy", "Report Generation Engine"],
             "description": "Data aggregation script that turns raw business metrics (sales, tasks, attendance) into a formatted weekly business report.",
-            "import_path": "src.modules.week2.report_generator.ui",
+            "import_path": "src.modules.report_generator.ui",
             "icon": "📊"
         },
         "resume_screening": {
@@ -86,7 +86,7 @@ MODULE_REGISTRY = {
             "difficulty": "Advanced",
             "tech": ["Python", "Pandas / NumPy", "spaCy / Embeddings matching", "Streamlit"],
             "description": "Automated recruitment tool scoring sample resume text files against job description keywords and semantic similarity.",
-            "import_path": "src.modules.week2.resume_screening.ui",
+            "import_path": "src.modules.resume_screening.ui",
             "icon": "🔍"
         },
         "ocr_document": {
@@ -98,7 +98,7 @@ MODULE_REGISTRY = {
             "difficulty": "Intermediate",
             "tech": ["Python", "Pandas", "OCR Library (PyTesseract/EasyOCR)", "LLM/NLP extraction"],
             "description": "Scanned document scanner extracting structured metadata (vendor name, date, invoice amount) from images and PDFs.",
-            "import_path": "src.modules.week2.ocr_document.ui",
+            "import_path": "src.modules.ocr_document.ui",
             "icon": "🖨️"
         },
         "predictive_analytics": {
@@ -110,7 +110,7 @@ MODULE_REGISTRY = {
             "difficulty": "Advanced",
             "tech": ["Python", "Pandas / NumPy", "scikit-learn (Regression/Classification)"],
             "description": "Forecasting module using historical sample/public datasets to predict key business KPIs like churn rates or demand trends.",
-            "import_path": "src.modules.week2.predictive_analytics.ui",
+            "import_path": "src.modules.predictive_analytics.ui",
             "icon": "📈"
         }
     }

@@ -1,10 +1,10 @@
 import streamlit as st
 from src.modules.registry import MODULE_REGISTRY
-from src.modules.week2.resume_screening.engine import ResumeScreeningEngineStub
+from src.modules.ocr_document.engine import OcrDocumentEngineStub
 
 def render_ui():
-    """Renders the Streamlit frontend tab for Resume Screening Prototype."""
-    metadata = MODULE_REGISTRY["week2"]["resume_screening"]
+    """Renders the Streamlit frontend tab for OCR / Document Processing Prototype."""
+    metadata = MODULE_REGISTRY["week2"]["ocr_document"]
     
     st.markdown(f'''
     <div class="hero-wrap">
@@ -35,9 +35,9 @@ def render_ui():
     st.write("### Interactive Mock Console")
     mock_input = st.text_input("Simulated Input Data", placeholder="Enter dummy data to test UI elements...")
     
-    if st.button("Trigger Test Run", key="trigger_resume_screening"):
+    if st.button("Trigger Test Run", key="trigger_ocr_document"):
         if mock_input:
-            engine = ResumeScreeningEngineStub()
+            engine = OcrDocumentEngineStub()
             result = engine.run_stub_process(mock_input)
             st.success("Successfully processed simulated input using engine stub!")
             st.json(result)

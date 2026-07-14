@@ -1,10 +1,10 @@
 import streamlit as st
 from src.modules.registry import MODULE_REGISTRY
-from src.modules.week2.hr_proposal.engine import HrProposalEngineStub
+from src.modules.report_generator.engine import ReportGeneratorEngineStub
 
 def render_ui():
-    """Renders the Streamlit frontend tab for HR Automation Proposal."""
-    metadata = MODULE_REGISTRY["week2"]["hr_proposal"]
+    """Renders the Streamlit frontend tab for AI Report Generator Prototype."""
+    metadata = MODULE_REGISTRY["week2"]["report_generator"]
     
     st.markdown(f'''
     <div class="hero-wrap">
@@ -35,9 +35,9 @@ def render_ui():
     st.write("### Interactive Mock Console")
     mock_input = st.text_input("Simulated Input Data", placeholder="Enter dummy data to test UI elements...")
     
-    if st.button("Trigger Test Run", key="trigger_hr_proposal"):
+    if st.button("Trigger Test Run", key="trigger_report_generator"):
         if mock_input:
-            engine = HrProposalEngineStub()
+            engine = ReportGeneratorEngineStub()
             result = engine.run_stub_process(mock_input)
             st.success("Successfully processed simulated input using engine stub!")
             st.json(result)

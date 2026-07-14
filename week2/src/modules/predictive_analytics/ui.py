@@ -1,10 +1,10 @@
 import streamlit as st
 from src.modules.registry import MODULE_REGISTRY
-from src.modules.week2.ocr_document.engine import OcrDocumentEngineStub
+from src.modules.predictive_analytics.engine import PredictiveAnalyticsEngineStub
 
 def render_ui():
-    """Renders the Streamlit frontend tab for OCR / Document Processing Prototype."""
-    metadata = MODULE_REGISTRY["week2"]["ocr_document"]
+    """Renders the Streamlit frontend tab for Predictive Analytics Mini-Study."""
+    metadata = MODULE_REGISTRY["week2"]["predictive_analytics"]
     
     st.markdown(f'''
     <div class="hero-wrap">
@@ -35,9 +35,9 @@ def render_ui():
     st.write("### Interactive Mock Console")
     mock_input = st.text_input("Simulated Input Data", placeholder="Enter dummy data to test UI elements...")
     
-    if st.button("Trigger Test Run", key="trigger_ocr_document"):
+    if st.button("Trigger Test Run", key="trigger_predictive_analytics"):
         if mock_input:
-            engine = OcrDocumentEngineStub()
+            engine = PredictiveAnalyticsEngineStub()
             result = engine.run_stub_process(mock_input)
             st.success("Successfully processed simulated input using engine stub!")
             st.json(result)

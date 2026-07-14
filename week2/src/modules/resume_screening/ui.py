@@ -1,10 +1,10 @@
 import streamlit as st
 from src.modules.registry import MODULE_REGISTRY
-from src.modules.week2.email_assistant.engine import EmailAssistantEngineStub
+from src.modules.resume_screening.engine import ResumeScreeningEngineStub
 
 def render_ui():
-    """Renders the Streamlit frontend tab for AI Email Assistant Prototype."""
-    metadata = MODULE_REGISTRY["week2"]["email_assistant"]
+    """Renders the Streamlit frontend tab for Resume Screening Prototype."""
+    metadata = MODULE_REGISTRY["week2"]["resume_screening"]
     
     st.markdown(f'''
     <div class="hero-wrap">
@@ -35,9 +35,9 @@ def render_ui():
     st.write("### Interactive Mock Console")
     mock_input = st.text_input("Simulated Input Data", placeholder="Enter dummy data to test UI elements...")
     
-    if st.button("Trigger Test Run", key="trigger_email_assistant"):
+    if st.button("Trigger Test Run", key="trigger_resume_screening"):
         if mock_input:
-            engine = EmailAssistantEngineStub()
+            engine = ResumeScreeningEngineStub()
             result = engine.run_stub_process(mock_input)
             st.success("Successfully processed simulated input using engine stub!")
             st.json(result)

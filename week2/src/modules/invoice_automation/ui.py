@@ -1,6 +1,6 @@
 import streamlit as st
 from src.modules.registry import MODULE_REGISTRY
-from src.modules.week2.invoice_automation.engine import InvoiceAutomationEngineStub
+from src.modules.invoice_automation.engine import InvoiceAutomationEngineStub
 
 def render_ui():
     """Renders the Streamlit frontend tab for Invoice Automation Prototype."""
