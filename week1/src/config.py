@@ -1,11 +1,9 @@
-# ==============================================================================
-# SafeX AI FAQ Chatbot - Configuration Settings
-# ==============================================================================
+# week1/src/config.py
 import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-# Load environment variables from .env
+# Load environment variables
 load_dotenv()
 
 # File System Paths

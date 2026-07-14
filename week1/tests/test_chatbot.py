@@ -6,9 +6,9 @@ import tempfile
 import os
 from pathlib import Path
 
-from src.core.knowledge_base import load_faq_data
-from src.core.similarity import FAQSimilarityModel
-from src.core.chatbot import FAQChatbot
+from src.knowledge_base import load_faq_data
+from src.similarity import FAQSimilarityModel
+from src.chatbot import FAQChatbot
 from src.config import FAQ_PATH, FALLBACK_MESSAGE
 
 def test_knowledge_base_loading():

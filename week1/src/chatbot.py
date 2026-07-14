@@ -5,8 +5,8 @@ import time
 from pathlib import Path
 from typing import Dict, Any
 
-from src.core.knowledge_base import load_faq_data
-from src.core.similarity import FAQSimilarityModel
+from src.knowledge_base import load_faq_data
+from src.similarity import FAQSimilarityModel
 from src.config import DEFAULT_THRESHOLD, FALLBACK_MESSAGE
 
 class FAQChatbot:

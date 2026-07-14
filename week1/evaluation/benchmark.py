@@ -10,7 +10,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.append(str(BASE_DIR))
 
-from src.core.chatbot import FAQChatbot
+from src.chatbot import FAQChatbot
 from src.config import FAQ_PATH, TEST_QUESTIONS_PATH, DEFAULT_THRESHOLD
 
 def run_benchmarks():

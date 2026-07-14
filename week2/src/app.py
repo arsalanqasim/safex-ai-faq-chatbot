@@ -24,7 +24,7 @@ st.set_page_config(
 )
 
 from src.modules.registry import MODULE_REGISTRY
-import src.modules.week1.faq_chatbot as faq_chatbot
+
 
 # ==============================================================================
 # 5. CSS — PREMIUM SAAS THEME (DARK / LIGHT)
@@ -768,7 +768,6 @@ def render_sidebar() -> None:
         # ---- Workspace Navigation ----
         st.markdown('<div class="sidebar-section-label">Active Workspace</div>', unsafe_allow_html=True)
         workspaces = [
-            "📚 Week 1: FAQ Assistant",
             "⚙️ Week 2: Automation Suite",
             "👥 Team Dashboard"
         ]
@@ -790,8 +789,8 @@ def render_sidebar() -> None:
             st.rerun()
 
         # ---- Workspace Specific Controls ----
-        if st.session_state.active_workspace_sel == "📚 Week 1: FAQ Assistant":
-            faq_chatbot.render_sidebar_controls()
+        if False:
+            pass
             
         elif st.session_state.active_workspace_sel == "⚙️ Week 2: Automation Suite":
             st.markdown('<div class="sidebar-section-label">Automation Prototypes</div>', unsafe_allow_html=True)
@@ -957,8 +956,8 @@ def main() -> None:
     # Routing main container
     active_ws = st.session_state.get("active_workspace_sel", "📚 Week 1: FAQ Assistant")
     
-    if active_ws == "📚 Week 1: FAQ Assistant":
-        faq_chatbot.render_ui()
+    if False:
+        pass
         
     elif active_ws == "⚙️ Week 2: Automation Suite":
         # Load and run the selected Week 2 stub module UI dynamically

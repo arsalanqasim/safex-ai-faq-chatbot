@@ -1,1 +1,0 @@
-# Core Shared Library Namespace

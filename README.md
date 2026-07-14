@@ -1,114 +1,85 @@
-# SafeX AI & Automation Suite
+# SafeX Solutions AI/ML Internship Portfolio (Summer 2026)
 
-Welcome to the **SafeX AI & Automation Suite** repository. This platform serves as a unified workspace for SafeX Solutions' business intelligence, client onboarding, and operations automation systems. It integrates diverse modular toolkits, predictive analytics, and automated workflows into a single interface.
-
----
-
-## 📖 Platform Overview
-
-The platform is designed to house multiple modular tools. It facilitates:
-* **Information Assistants:** Locally running knowledge bases and semantic search tools.
-* **Business Automation Modules:** Extensible scripts and interfaces for document extraction, workflows, scheduling, and analytics.
-* **Operations Dashboards:** Visual management systems and team contribution summaries.
-
-The codebase is built on **Python** and served locally through an interactive web-based interface using **Streamlit**.
+This repository serves as the official collaborative workspace and portfolio for **Group 54** during the **SafeX Solutions Remote Summer Internship Cohort (2026)**. SafeX Solutions is a technology firm specializing in custom AI/ML implementations, operations automation, and business intelligence systems. 
 
 ---
 
-## 📁 Repository Structure
+## 🏆 Leadership & Group Roster
 
-The project uses a modular folder structure to ensure code segregation, allowing multiple developers to work independently without overlapping changes:
+* **Group Leader:** **Arsalan Qasim** (AI/ML Intern, COMSATS University Islamabad)
+* **Team size:** 8 Members
 
-```text
-safex-platform/
-├── requirements.txt            # System dependencies
-├── README.md                   # Platform documentation
-├── AGENTS.md                   # Instructions and rules for AI coding assistants
-│
-├── data/                       # Shared datasets, logs, and files
-│   └── faq.json                # Verified information database
-│
-├── docs/                       # Written reports, summaries, and guides
-│   └── Meeting_Notes.md        # Templates for alignments
-│
-├── src/                        # Platform source code
-│   ├── app.py                  # Main dashboard dashboard, styling, and navigation
-│   ├── config.py               # Shared constants and settings
-│   │
-│   ├── core/                   # Shared backend algorithms, search, and loading scripts
-│   │   ├── chatbot.py          
-│   │   ├── similarity.py       
-│   │   └── knowledge_base.py   
-│   │
-│   └── modules/                # Workspace extension modules organized by category
-│       ├── registry.py         # Metadata directory mapping files to features
-│       ├── week1/              # Week 1 project extensions
-│       └── week2/              # Week 2 project extensions
-│
-└── tests/                      # Pytest unit testing suite
-```
+Below is the complete registry of Group 54 contributors and their universities:
+
+| # | Intern Name | Role | University | Specialty / Track | Contact Email |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | **Arsalan Qasim** 🏆 | Group Leader | COMSATS University Islamabad | AI/ML, Automation | arsalanqasim400@gmail.com |
+| 2 | **MUHAMMAD WASIM** | Team Member | UET Peshawar | AI/ML, Data Science | muhammadwasimpukhtoon@gmail.com |
+| 3 | **Muhammad Faozan Mujtaba** | Team Member | NUST H-12 | AI/ML, Computer Science | fozanmujtaba.480@gmail.com |
+| 4 | **Shahidullah** | Team Member | Bahria University | AI/ML, Web Development | shahidullahkhan091@gmail.com |
+| 5 | **Ali Ammar Haider** | Team Member | COMSATS University Islamabad | Business Data Analytics | ahwheh688@gmail.com |
+| 6 | **Abdul Haseeb** | Team Member | COMSATS University Islamabad | AI/ML, Computer Science | abdlhaseeb17@gmail.com |
+| 7 | **Hammad Abbas** | Team Member | Agriculture University of Peshawar | Data Analyst & Data Science | hammadhadid723@gmail.com |
+| 8 | **Ali Zaib** | Team Member | COMSATS University Islamabad | AI/ML, Computer Science | aliofficialzaib@gmail.com |
 
 ---
 
-## ⚙️ Setup Instructions
+## 📁 Modular Directory Architecture
 
-Follow these steps to run the platform locally:
+To ensure code hygiene, avoid merge conflicts, and keep submissions clean, the repository is segmented into independent week-by-week subfolders at the root. Each week's workspace is completely self-contained with its own dependencies, source files, documentation, and tests:
 
-### 1. Prerequisites
-* Python 3.9 or higher installed.
-* Git installed.
+### 📚 [week1/](file:///c:/Users/arsal/Desktop/safex/week1/) — SafeX AI FAQ Chatbot
+* **Purpose:** A collaborative semantic search chatbot built to resolve internal intern onboarding queries about SafeX Solutions (HR policies, office timings, IT rules).
+* **Core Technology:** Python, Streamlit, scikit-learn (TF-IDF Vectorizer & Cosine Similarity), pytest.
+* **Deliverable Status:** 100% Completed & Verified.
 
-### 2. Set Up Virtual Environment
-Initialize and activate a virtual environment to manage dependencies cleanly:
+### ⚙️ [week2/](file:///c:/Users/arsal/Desktop/safex/week2/) — Business Automation Research
+* **Purpose:** Modular prototyping hub for SafeX Solutions' business automation systems.
+* **Core Technology:** Python, Pandas, Streamlit.
+* **Deliverable Status:** Structural Scaffolding & Boilerplate active. Each of the 8 members has a dedicated folder containing UI stubs and engine stubs ready for their individual logic implementation.
+* **Individual Module Assignments:**
+  1. **Arsalan Qasim:** *Invoice Automation Prototype* (Scaffolding ready)
+  2. **MUHAMMAD WASIM:** *Attendance Automation Prototype* (Scaffolding ready)
+  3. **Muhammad Faozan Mujtaba:** *HR Automation Proposal* (Scaffolding ready)
+  4. **Shahidullah:** *AI Email Assistant Prototype* (Scaffolding ready)
+  5. **Ali Ammar Haider:** *AI Report Generator Prototype* (Scaffolding ready)
+  6. **Abdul Haseeb:** *Resume Screening Prototype* (Scaffolding ready)
+  7. **Hammad Abbas:** *OCR / Document Processing Prototype* (Scaffolding ready)
+  8. **Ali Zaib:** *Predictive Analytics Mini-Study* (Scaffolding ready)
 
+---
+
+## ⚙️ How to Navigate and Execute
+
+Since every week task is fully modular, you must navigate into the specific folder before installing requirements or running code:
+
+### Running Week 1 FAQ Chatbot
 ```bash
-# Initialize venv
-python -m venv venv
+# Navigate to Week 1 workspace
+cd week1
 
-# Activate on Windows
-venv\Scripts\activate
-
-# Activate on macOS / Linux
-source venv/bin/activate
-```
-
-### 3. Install Dependencies
-Install all required platform libraries:
-```bash
+# Install requirements
 pip install -r requirements.txt
-```
 
-### 4. Configure Environment
-Set up your local configuration settings:
-```bash
-# Copy template env
-cp .env.example .env
-```
-
-### 5. Run the Platform
-Start the local Streamlit development server:
-```bash
+# Run original chatbot app
 streamlit run src/app.py
 ```
-Open [http://localhost:8501](http://localhost:8501) in your browser.
 
-### 6. Run Unit Tests
-To execute automated tests validating core utilities:
+### Running Week 2 Business Automation Suite
 ```bash
-python -m pytest
+# Navigate to Week 2 workspace
+cd week2
+
+# Install requirements
+pip install -r requirements.txt
+
+# Run automation hub routing app
+streamlit run src/app.py
 ```
 
----
-
-## 🤝 Contribution Guidelines
-
-To maintain code quality and prevent version control conflicts, all contributors must follow these rules:
-
-1. **Keep Code Modulated:** Avoid writing code in shared files like `src/app.py` or `src/config.py` unless coordinating layout changes.
-2. **Develop in Modules:** Place all code, assets, and tests inside your assigned subdirectory under `src/modules/`.
-3. **Use Namespace Imports:** Ensure all local imports are referenced from the project root directory (e.g. `from src.core.chatbot import ...`).
-4. **Git Branching Policy:**
-   * Never push changes directly to the `main` branch.
-   * Create a feature branch for your work: `feature/<module_name>-<developer_name>` (e.g., `feature/ocr-hammad`).
-   * Once code is tested locally, open a Pull Request (PR) to `main` and request a review from the Group Leader.
-5. **No Placeholders in Production:** Do not push non-functional placeholders or stubs once your feature is complete. Fully document your classes and functions.
+### Running Tests
+To run unit tests for a specific week:
+```bash
+cd week1
+python -m pytest
+```
