@@ -13,7 +13,7 @@ Below is the complete registry of Group 54 contributors and their universities:
 
 | # | Intern Name | Role | University | Specialty / Track | Contact Email |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | **Arsalan Qasim** 🏆 | Group Leader | COMSATS University Islamabad | AI/ML, Automation | arsalanqasim400@gmail.com |
+| 1 | **Arsalan Qasim** | Group Leader | COMSATS University Islamabad | AI/ML, Automation | arsalanqasim400@gmail.com |
 | 2 | **MUHAMMAD WASIM** | Team Member | UET Peshawar | AI/ML, Data Science | muhammadwasimpukhtoon@gmail.com |
 | 3 | **Muhammad Faozan Mujtaba** | Team Member | NUST H-12 | AI/ML, Computer Science | fozanmujtaba.480@gmail.com |
 | 4 | **Shahidullah** | Team Member | Bahria University | AI/ML, Web Development | shahidullahkhan091@gmail.com |
