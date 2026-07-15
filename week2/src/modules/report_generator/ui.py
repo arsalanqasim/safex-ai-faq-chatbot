@@ -1,45 +1,85 @@
 import streamlit as st
-from src.modules.registry import MODULE_REGISTRY
-from src.modules.report_generator.engine import ReportGeneratorEngineStub
+from .engine import generate_report
 
 def render_ui():
-    """Renders the Streamlit frontend tab for AI Report Generator Prototype."""
-    metadata = MODULE_REGISTRY["week2"]["report_generator"]
+    if "data" not in st.session_state:
+        with st.spinner("Generating Report..."):
+            st.session_state.data = generate_report()
     
-    st.markdown(f'''
-    <div class="hero-wrap">
-        <div class="hero-badge">⚙️ Business Automation Suite</div>
-        <div class="hero-title">{metadata["title"]}</div>
-        <div class="hero-subtitle">
-            Assigned to: <strong>{metadata["developer"]}</strong> ({metadata["role"]})
-        </div>
-    </div>
-    ''', unsafe_allow_html=True)
-    
-    # Info Details Box
-    st.info(
-        f"**Developer E-mail:** {metadata['email']}  \n"
-        f"**Difficulty Level:** {metadata['difficulty']}  \n"
-        f"**Required Stack:** {', '.join(metadata['tech'])}"
+    data = st.session_state.data 
+        
+    st.title("📊 SafeX AI Report Generator")
+
+    st.write("Business Automation Research - Week 2")
+
+    st.divider()
+
+    col1,col2,col3,col4=st.columns(4)
+
+    col1.metric("Projects",data["total_projects"])
+
+    col2.metric("Completed",data["completed_projects"])
+
+    col3.metric(
+    "Completion %",
+    f'{data["average_completion"]:.2f}%'
     )
-    
-    st.subheader("Objective & Scope")
-    st.write(metadata["description"])
-    
-    st.markdown("---")
-    
-    # Warning Notice
-    st.warning("⚠️ **Notice:** This is a placeholder scaffolding tab. No actual business automation logic has been implemented. Implementation is pending developer assignment.")
-    
-    # Interactive Mock Console
-    st.write("### Interactive Mock Console")
-    mock_input = st.text_input("Simulated Input Data", placeholder="Enter dummy data to test UI elements...")
-    
-    if st.button("Trigger Test Run", key="trigger_report_generator"):
-        if mock_input:
-            engine = ReportGeneratorEngineStub()
-            result = engine.run_stub_process(mock_input)
-            st.success("Successfully processed simulated input using engine stub!")
-            st.json(result)
-        else:
-            st.error("Please enter simulated input data first.")
+
+    col4.metric(
+    "Health Score",
+    f'{data["health_score"]}/100'
+    )
+
+    st.divider()
+
+    st.subheader("🤖 AI Insights")
+
+    st.write(data["ai_report"])
+
+    st.divider()
+
+    st.subheader("📈 Charts")
+
+    st.image(data["CHART_PATHS"]["status"])
+
+    st.image(data["CHART_PATHS"]["department"])
+
+    st.image(data["CHART_PATHS"]["risk"])
+
+    st.image(data["CHART_PATHS"]["budget"])
+
+    st.image(data["CHART_PATHS"]["satisfaction"])
+
+    st.image(data["CHART_PATHS"]["completion"])
+
+    st.image(data["CHART_PATHS"]["hours"])
+
+    st.image(data["CHART_PATHS"]["completion_department"])
+
+    st.divider()
+
+    st.subheader("📄 Reports")
+
+    with open(data["PDF_PATH"], "rb") as pdf:
+        pdf_data = pdf.read()
+        
+    st.download_button(
+    "Download PDF",
+    pdf_data,
+    file_name="Weekly_Business_Report.pdf",
+    mime="application/pdf"
+    )
+
+    with open(data["TEXT_REPORT_PATH"],"r",encoding="utf-8") as txt:
+
+        st.download_button(
+            "Download Text Report",
+            txt.read(),
+            file_name="weekly_report.txt"
+        )
+
+    st.divider()
+
+    st.subheader("Weekly Report")
+
+    st.text(data["report"])
