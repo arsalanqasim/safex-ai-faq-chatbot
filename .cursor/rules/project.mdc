@@ -1,0 +1,31 @@
+---
+description: SafeX Group 54 project rules
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+# SafeX Group 54 Cursor Rules
+
+Read `AGENTS.md` first. It is the shared harness for this repository.
+
+Use these supporting files for project context:
+
+- `docs/project-brief.md`
+- `docs/team-roster.md`
+- `docs/weekly-task-log.md`
+- `docs/agent-memory.md`
+- `docs/review-checklist.md`
+
+Rules:
+
+- Keep `week1/` and `week2/` independent.
+- Keep Week 2 module changes inside the relevant `week2/src/modules/<module_name>/` folder.
+- Preserve unrelated member work.
+- Do not add personal emails, phone numbers, secrets, or private feedback content.
+- Use relative paths, not local absolute paths.
+- Use typed Python interfaces.
+- Keep Streamlit module UI inside `render_ui()`.
+- Keep app-level Streamlit setup in `week2/src/app.py`.
+- Keep module registry data aligned with actual folders and app routing.
+- Update `docs/agent-memory.md` for durable project context.
