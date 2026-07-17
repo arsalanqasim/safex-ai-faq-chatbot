@@ -1,0 +1,41 @@
+Project ID,Project Name,Department,Project Manager,Status,Hours Worked,Completion %,Priority,Client,Start Date,Expected End Date,Weekly Progress %,Budget ($),Actual Cost ($),Team Size,Risk Level,Client Satisfaction,Delay (Days),On Time
+P001,AI FAQ Chatbot,AI,Ali Ammar,Completed,23,100,High,SafeX Internal,2026-07-02,2026-07-11,8,5750,5550,4,Medium,4.1,0,Yes
+P002,Website Redesign,Web Development,Ahmed Khan,Completed,26,100,Medium,TechNova,2026-07-03,2026-07-12,11,6500,6300,5,High,4.4,0,Yes
+P003,SEO Campaign,Digital Marketing,Sara Ali,In Progress,29,75,Low,ABC Traders,2026-07-04,2026-07-13,14,7250,7550,6,Low,4.7,4,No
+P004,Cloud Migration,Cloud Computing,Usman Tariq,Completed,32,100,High,CloudX,2026-07-05,2026-07-14,17,8000,7800,7,Medium,5.0,0,Yes
+P005,Cybersecurity Audit,Cybersecurity,Hassan Raza,Pending,35,30,High,SecureNet,2026-07-06,2026-07-15,20,8750,9050,8,High,3.8,1,Yes
+P006,Mobile App UI,UI/UX Design,Ayesha Noor,In Progress,38,65,Medium,FoodHub,2026-07-07,2026-07-16,5,9500,9800,3,Low,4.1,2,Yes
+P007,CRM Integration,Software Development,Bilal Ahmed,Completed,41,100,Low,RetailPro,2026-07-01,2026-07-17,8,10250,10050,4,Medium,4.4,0,Yes
+P008,Power BI Dashboard,Data Analytics,Zain Malik,Completed,44,100,High,FinEdge,2026-07-02,2026-07-18,11,11000,10800,5,High,4.7,0,Yes
+P009,HR Attendance System,AI,Maryam Khan,In Progress,47,80,High,BrandBoost,2026-07-03,2026-07-19,14,11750,12050,6,Low,5.0,5,No
+P010,Social Media Analytics,Web Development,Fatima Noor,Pending,50,40,Medium,SmartHelp,2026-07-04,2026-07-20,17,12500,12800,7,Medium,3.8,1,Yes
+P011,Customer Support Chatbot,Digital Marketing,Hamza Ali,Completed,53,100,Low,CyberSafe,2026-07-05,2026-07-21,20,13250,13050,8,High,4.1,0,Yes
+P012,Email Marketing Automation,Cloud Computing,Noor Fatima,In Progress,21,70,High,ShopEase,2026-07-06,2026-07-22,5,14000,14300,3,Low,4.4,3,No
+P013,Penetration Testing,Cybersecurity,Saad Hassan,Completed,24,100,High,SafeX Internal,2026-07-07,2026-07-23,8,14750,14550,4,Medium,4.7,0,Yes
+P014,E-commerce Platform Upgrade,UI/UX Design,Hina Aslam,Completed,27,100,Medium,TechNova,2026-07-01,2026-07-24,11,15500,15300,5,High,5.0,0,Yes
+P015,AI Document Analyzer,Software Development,Omar Farooq,Pending,30,50,Low,ABC Traders,2026-07-02,2026-07-10,14,16250,16550,6,Low,3.8,1,Yes
+P016,Portfolio Website,Data Analytics,Ali Ammar,Completed,33,100,High,CloudX,2026-07-03,2026-07-11,17,17000,16800,7,Medium,4.1,0,Yes
+P017,Google Ads Optimization,AI,Ahmed Khan,Completed,36,100,High,SecureNet,2026-07-04,2026-07-12,20,17750,17550,8,High,4.4,0,Yes
+P018,Cloud Backup System,Web Development,Sara Ali,In Progress,39,75,Medium,FoodHub,2026-07-05,2026-07-13,5,18500,18800,3,Low,4.7,4,No
+P019,Vulnerability Assessment,Digital Marketing,Usman Tariq,Completed,42,100,Low,RetailPro,2026-07-06,2026-07-14,8,19250,19050,4,Medium,5.0,0,Yes
+P020,Mobile App Prototype,Cloud Computing,Hassan Raza,Pending,45,20,High,FinEdge,2026-07-07,2026-07-15,11,20000,20300,5,High,3.8,1,Yes
+P021,Inventory Management,Cybersecurity,Ayesha Noor,In Progress,48,65,High,BrandBoost,2026-07-01,2026-07-16,14,20750,21050,6,Low,4.1,2,Yes
+P022,Sales Dashboard,UI/UX Design,Bilal Ahmed,Completed,51,100,Medium,SmartHelp,2026-07-02,2026-07-17,17,21500,21300,7,Medium,4.4,0,Yes
+P023,Predictive Analytics,Software Development,Zain Malik,Completed,54,100,Low,CyberSafe,2026-07-03,2026-07-18,20,22250,22050,8,High,4.7,0,Yes
+P024,Landing Page Revamp,Data Analytics,Maryam Khan,In Progress,22,80,High,ShopEase,2026-07-04,2026-07-19,5,23000,23300,3,Low,5.0,5,No
+P025,Content Strategy,AI,Fatima Noor,Pending,25,30,High,SafeX Internal,2026-07-05,2026-07-20,8,23750,24050,4,Medium,3.8,1,Yes
+P026,Azure Deployment,Web Development,Hamza Ali,Completed,28,100,Medium,TechNova,2026-07-06,2026-07-21,11,24500,24300,5,High,4.1,0,Yes
+P027,Firewall Configuration,Digital Marketing,Noor Fatima,In Progress,31,70,Low,ABC Traders,2026-07-07,2026-07-22,14,25250,25550,6,Low,4.4,3,No
+P028,Employee Portal,Cloud Computing,Saad Hassan,Completed,34,100,High,CloudX,2026-07-01,2026-07-23,17,26000,25800,7,Medium,4.7,0,Yes
+P029,Customer Insights,Cybersecurity,Hina Aslam,Completed,37,100,High,SecureNet,2026-07-02,2026-07-24,20,26750,26550,8,High,5.0,0,Yes
+P030,UX Research,UI/UX Design,Omar Farooq,Pending,40,40,Medium,FoodHub,2026-07-03,2026-07-10,5,27500,27800,3,Low,3.8,1,Yes
+P031,Invoice Automation,Software Development,Ali Ammar,Completed,43,100,Low,RetailPro,2026-07-04,2026-07-11,8,28250,28050,4,Medium,4.1,0,Yes
+P032,Business Intelligence,Data Analytics,Ahmed Khan,Completed,46,100,High,FinEdge,2026-07-05,2026-07-12,11,29000,28800,5,High,4.4,0,Yes
+P033,AI Report Generator,AI,Sara Ali,In Progress,49,75,High,BrandBoost,2026-07-06,2026-07-13,14,29750,30050,6,Low,4.7,4,No
+P034,Website Maintenance,Web Development,Usman Tariq,Completed,52,100,Medium,SmartHelp,2026-07-07,2026-07-14,17,30500,30300,7,Medium,5.0,0,Yes
+P035,Email Security,Digital Marketing,Hassan Raza,Pending,20,50,Low,CyberSafe,2026-07-01,2026-07-15,20,31250,31550,8,High,3.8,1,Yes
+P036,Server Monitoring,Cloud Computing,Ayesha Noor,In Progress,23,65,High,ShopEase,2026-07-02,2026-07-16,5,32000,32300,3,Low,4.1,2,Yes
+P037,Marketing Dashboard,Cybersecurity,Bilal Ahmed,Completed,26,100,High,SafeX Internal,2026-07-03,2026-07-17,8,32750,32550,4,Medium,4.4,0,Yes
+P038,Data Cleaning Pipeline,UI/UX Design,Zain Malik,Completed,29,100,Medium,TechNova,2026-07-04,2026-07-18,11,33500,33300,5,High,4.7,0,Yes
+P039,API Integration,Software Development,Maryam Khan,In Progress,32,80,Low,ABC Traders,2026-07-05,2026-07-19,14,34250,34550,6,Low,5.0,5,No
+P040,Knowledge Base System,Data Analytics,Fatima Noor,Pending,35,20,High,CloudX,2026-07-06,2026-07-20,17,35000,35300,7,Medium,3.8,1,Yes
