@@ -1,0 +1,9 @@
+{
+  "channel": "Email",
+  "recipient": "billing@northstar.example",
+  "subject": "Invoice INV-20260717-86D5E3 from SafeX Solutions",
+  "body": "Dear NorthStar Retail,\n\nYour invoice INV-20260717-86D5E3 has been prepared.\nAmount due: PKR 96860.00\nDue date: 2026-07-24\n\nThank you,\nSafeX Solutions",
+  "status": "Prepared for delivery",
+  "reference": "MSG-73FCD3C85E",
+  "created_at": "2026-07-17T16:02:14+00:00"
+}

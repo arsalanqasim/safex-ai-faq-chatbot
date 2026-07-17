@@ -18,14 +18,14 @@ MODULE_REGISTRY = {
     },
     "week2": {
         "invoice_automation": {
-            "title": "Invoice Automation Prototype",
+            "title": "Invoice Automation Module",
             "developer": "Arsalan Qasim",
             "role": "Group Leader",
             "email": "arsalanqasim400@gmail.com",
-            "status": "Placeholder (Scaffolding Ready)",
+            "status": "Submission Ready",
             "difficulty": "Advanced",
-            "tech": ["Python", "Pandas", "NumPy", "NLP libraries (spaCy/NLTK) / LLM API", "FastAPI/Streamlit", "Twilio / WhatsApp API"],
-            "description": "Workflow that extracts invoice line items from natural language orders, compiles a professional PDF, saves records, and simulates client delivery.",
+            "tech": ["Python", "Pandas", "Streamlit", "CSV/JSON/HTML Export", "Delivery Message Simulation"],
+            "description": "Submission-ready workflow that captures customer details, parses or edits invoice line items, calculates discounts and tax, exports invoice records, renders printable HTML, and prepares a delivery message for email, WhatsApp, or SMS integration.",
             "import_path": "src.modules.invoice_automation.ui",
             "icon": "📄"
         },

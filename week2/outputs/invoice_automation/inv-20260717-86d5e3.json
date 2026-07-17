@@ -1,0 +1,40 @@
+{
+  "invoice_number": "INV-20260717-86D5E3",
+  "issue_date": "2026-07-17",
+  "due_date": "2026-07-24",
+  "customer": {
+    "name": "NorthStar Retail",
+    "email": "billing@northstar.example",
+    "phone": "+92 300 0000000",
+    "address": "Blue Area, Islamabad"
+  },
+  "line_items": [
+    {
+      "description": "Website audit",
+      "quantity": "1",
+      "unit_price": "25000.00",
+      "subtotal": "25000.00"
+    },
+    {
+      "description": "Monthly SEO retainer",
+      "quantity": "2",
+      "unit_price": "18000.00",
+      "subtotal": "36000.00"
+    },
+    {
+      "description": "Support package",
+      "quantity": "3",
+      "unit_price": "7500.00",
+      "subtotal": "22500.00"
+    }
+  ],
+  "subtotal": "83500.00",
+  "discount_rate": "0.00",
+  "discount_amount": "0.00",
+  "tax_rate": "16.00",
+  "tax_amount": "13360.00",
+  "total": "96860.00",
+  "status": "Ready for review",
+  "notes": "Payment is due by the listed date. This invoice was generated through the SafeX invoice automation module.",
+  "created_at": "2026-07-17T16:02:14+00:00"
+}

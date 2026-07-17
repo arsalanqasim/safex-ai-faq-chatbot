@@ -16,7 +16,7 @@ This file tracks Group 54 members, assignments, module ownership, and progress. 
 
 | Member | Role | Institution / Program | Week 1 Work | Week 2 Assignment | Module Folder | Current Status | Last Known Update | Notes |
 |---|---|---|---|---|---|---|---|---|
-| Arsalan Qasim | Group Leader | COMSATS University Islamabad, BS Artificial Intelligence | Group consolidation plus FAQ chatbot contribution | Invoice Automation Prototype | `week2/src/modules/invoice_automation/` | In progress | 2026-07-17 | Also responsible for weekly consolidation and Team Lead summary. |
+| Arsalan Qasim | Group Leader | COMSATS University Islamabad, BS Artificial Intelligence | Group consolidation plus FAQ chatbot contribution | Invoice Automation Module | `week2/src/modules/invoice_automation/` | Ready for review | 2026-07-17 | Submission-ready invoice workflow implemented and integrated with the Week 2 Streamlit app. |
 | MUHAMMAD WASIM | Member | UET Peshawar, AI | FAQ chatbot group contribution | Attendance Automation Prototype | `week2/src/modules/attendance/` | Not started | 2026-07-17 | Update when deliverables or communication are received. |
 | Muhammad Faozan Mujtaba | Member | NUST H-12, Computer Science | FAQ chatbot group contribution | HR Automation Proposal | `week2/src/modules/hr_proposal/` | In progress | 2026-07-17 | Existing registry marks this module completed; confirm final deliverables before status becomes Submitted. |
 | Shahidullah | Member | Bahria, BSCS | FAQ chatbot group contribution | AI Email Assistant Prototype | `week2/src/modules/email_assistant/` | In progress | 2026-07-17 | Existing registry marks this module completed; confirm final deliverables before status becomes Submitted. |
@@ -30,7 +30,7 @@ This file tracks Group 54 members, assignments, module ownership, and progress. 
 
 | Member | Source Code | Documentation | Screenshots / Recording | GitHub Ready | Working Demo | Progress Report | Explanation Video | Follow-up Needed |
 |---|---|---|---|---|---|---|---|---|
-| Arsalan Qasim | Pending | Pending | Pending | Pending | Pending | Pending | Pending | Confirm final invoice deliverables. |
+| Arsalan Qasim | Received | Pending | Pending | Received | Received | Pending | Pending | Manual screenshot/recording and explanation video still need to be captured. |
 | MUHAMMAD WASIM | Pending | Pending | Pending | Pending | Pending | Pending | Pending | Ask for attendance module update. |
 | Muhammad Faozan Mujtaba | Pending verification | Pending verification | Pending verification | Pending verification | Pending verification | Pending verification | Pending verification | Verify HR module completion evidence. |
 | Shahidullah | Pending verification | Pending verification | Pending verification | Pending verification | Pending verification | Pending verification | Pending verification | Verify email assistant completion evidence. |

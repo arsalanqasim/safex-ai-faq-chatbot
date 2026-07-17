@@ -40,6 +40,7 @@ Do not store:
 - 2026-07-17: Current confirmed Week 2 assignments are listed in `docs/team-roster.md`.
 - 2026-07-17: Malik Sudais appears in the source roster with an Invoice Automation Prototype assignment, while `week2/src/modules/` currently has one `invoice_automation` module associated with Arsalan Qasim. Confirm ownership before changing module structure.
 - 2026-07-17: Existing registry marks HR Proposal, Email Assistant, and Report Generator as completed, but deliverable evidence should be verified before marking them Submitted in harness docs.
+- 2026-07-17: Arsalan Qasim's Week 2 invoice module now has a submission-ready local workflow with invoice calculation, line-item parsing/editing, JSON/CSV/HTML export, delivery-message preparation, Streamlit UI integration, and tests.
 
 ## Open Questions
 
