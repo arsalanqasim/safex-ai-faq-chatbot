@@ -3,14 +3,6 @@ import os
 from .engine import generate_report
 
 def render_ui():
-    # Page configurations
-    st.set_page_config(
-        page_title="SafeX AI Report Generator",
-        page_icon="📊",
-        layout="wide",
-        initial_sidebar_state="expanded"
-    )
-
     # Injected Premium Custom CSS for "Wow Factor" (Dark Modern Theme)
     st.markdown("""
     <style>
