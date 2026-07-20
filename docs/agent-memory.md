@@ -19,6 +19,7 @@ Do not store:
 - 2026-07-17: Week 2 is the Business Automation Research prototype suite.
 - 2026-07-17: Week 2 modules live under `week2/src/modules/`.
 - 2026-07-17: Each Week 2 module is expected to have `__init__.py`, `engine.py`, and `ui.py`.
+- 2026-07-19: Created Week 2 Self-Initiative report (`week2/docs/Self_Initiative.md`) documenting the modular Streamlit host, contribution registry, global CSS branding, and sandboxed scaffolding.
 
 ## Decisions Made
 
@@ -27,6 +28,7 @@ Do not store:
 - 2026-07-17: Agent memory should live at `docs/agent-memory.md`.
 - 2026-07-17: The harness file set is `AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md`, `.cursor/rules/project.mdc`, and docs under `docs/`.
 - 2026-07-17: The roster fields `Internship Field (Original Response)` and `Field Category` are not task assignments and should not be inserted into harness docs as task data.
+- 2026-07-19: Integrated the Group Leader Self-Initiative report under `week2/docs/Self_Initiative.md` and added summary sections to `Week2_Status_Report.md`.
 
 ## Workflow Notes
 
@@ -39,14 +41,14 @@ Do not store:
 
 - 2026-07-17: Current confirmed Week 2 assignments are listed in `docs/team-roster.md`.
 - 2026-07-17: Malik Sudais appears in the source roster with an Invoice Automation Prototype assignment, while `week2/src/modules/` currently has one `invoice_automation` module associated with Arsalan Qasim. Confirm ownership before changing module structure.
-- 2026-07-17: Existing registry marks HR Proposal, Email Assistant, and Report Generator as completed, but deliverable evidence should be verified before marking them Submitted in harness docs.
-- 2026-07-17: Arsalan Qasim's Week 2 invoice module now has a submission-ready local workflow with invoice calculation, line-item parsing/editing, JSON/CSV/HTML export, delivery-message preparation, Streamlit UI integration, and tests.
+- 2026-07-19: Verified through Git PR history that 3 group members completed and integrated their Week 2 modules (Muhammad Faozan Mujtaba, Shahidullah, Ali Ammar Haider) in addition to Arsalan Qasim.
+- 2026-07-19: Inactive members who have not submitted PRs or commits for Week 2 are MUHAMMAD WASIM, Abdul Haseeb, Hammad Abbas, and Ali Zaib. They are marked 'No response' with a follow-up date of 2026-07-19.
+- 2026-07-19: Malik Sudais is confirmed to be not active as a team member for Week 2. Leadership will review his status in Week 3.
+- 2026-07-19: Screenshot, recording, progress report, and video submissions are tracked dynamically in the shared Google Sheet: https://docs.google.com/spreadsheets/d/1KySlQDSuPAtdBWXqFlEKz8NFvk0yfzs6KrTVqTZ5AaQ/edit?gid=800509207#gid=800509207.
 
 ## Open Questions
 
-- 2026-07-17: Should Malik Sudais share the existing invoice module, create a separate invoice-related module, or be tracked outside the current code structure?
-- 2026-07-17: Which members have submitted screenshots, recordings, progress reports, and explanation videos for Week 2?
-- 2026-07-17: Which members should be marked `No response` after follow-up dates are known?
+- 2026-07-19: Are there any specific integration challenges faced by the 3 active members during team branch merges? (None reported so far.)
 
 ## Do-Not-Repeat Mistakes
 

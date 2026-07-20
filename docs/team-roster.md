@@ -16,29 +16,32 @@ This file tracks Group 54 members, assignments, module ownership, and progress. 
 
 | Member | Role | Institution / Program | Week 1 Work | Week 2 Assignment | Module Folder | Current Status | Last Known Update | Notes |
 |---|---|---|---|---|---|---|---|---|
-| Arsalan Qasim | Group Leader | COMSATS University Islamabad, BS Artificial Intelligence | Group consolidation plus FAQ chatbot contribution | Invoice Automation Module | `week2/src/modules/invoice_automation/` | Ready for review | 2026-07-17 | Submission-ready invoice workflow implemented and integrated with the Week 2 Streamlit app. |
-| MUHAMMAD WASIM | Member | UET Peshawar, AI | FAQ chatbot group contribution | Attendance Automation Prototype | `week2/src/modules/attendance/` | Not started | 2026-07-17 | Update when deliverables or communication are received. |
-| Muhammad Faozan Mujtaba | Member | NUST H-12, Computer Science | FAQ chatbot group contribution | HR Automation Proposal | `week2/src/modules/hr_proposal/` | In progress | 2026-07-17 | Existing registry marks this module completed; confirm final deliverables before status becomes Submitted. |
-| Shahidullah | Member | Bahria, BSCS | FAQ chatbot group contribution | AI Email Assistant Prototype | `week2/src/modules/email_assistant/` | In progress | 2026-07-17 | Existing registry marks this module completed; confirm final deliverables before status becomes Submitted. |
-| Ali Ammar Haider | Member | COMSATS University Islamabad, Business Data Analytics | FAQ chatbot group contribution | AI Report Generator Prototype | `week2/src/modules/report_generator/` | In progress | 2026-07-17 | Existing registry marks this module completed; confirm final deliverables before status becomes Submitted. |
-| Abdul Haseeb | Member | COMSATS University Islamabad, Computer Science | FAQ chatbot group contribution | Resume Screening Prototype | `week2/src/modules/resume_screening/` | Not started | 2026-07-17 | Update when deliverables or communication are received. |
-| Hammad Abbas | Member | Agriculture University of Peshawar, Computer Science | FAQ chatbot group contribution | OCR / Document Processing Prototype | `week2/src/modules/ocr_document/` | Not started | 2026-07-17 | Update when deliverables or communication are received. |
-| Ali Zaib | Member | COMSATS Islamabad, BS Artificial Intelligence | FAQ chatbot group contribution | Predictive Analytics Mini-Study | `week2/src/modules/predictive_analytics/` | Not started | 2026-07-17 | Update when deliverables or communication are received. |
-| Malik Sudais | Member | Sarhad University of Science and Information Technology Peshawar, Software Engineering | FAQ chatbot group contribution | Invoice Automation Prototype | Confirm module ownership | Needs clarification | 2026-07-17 | Source roster lists a second invoice assignment. Confirm whether this is shared with Arsalan or needs a separate module. |
+| Arsalan Qasim | Group Leader | COMSATS University Islamabad, BS Artificial Intelligence | Group consolidation plus FAQ chatbot contribution | Invoice Automation Module | `week2/src/modules/invoice_automation/` | Submitted | 2026-07-19 | Submission-ready invoice workflow implemented, styled, and integrated. |
+| MUHAMMAD WASIM | Member | UET Peshawar, AI | FAQ chatbot group contribution | Attendance Automation Prototype | `week2/src/modules/attendance/` | No response | 2026-07-19 | No PR or code submission received for Week 2. |
+| Muhammad Faozan Mujtaba | Member | NUST H-12, Computer Science | FAQ chatbot group contribution | HR Automation Proposal | `week2/src/modules/hr_proposal/` | Submitted | 2026-07-19 | Completed onboarding pipeline and leave ticketing. PR #8 merged and verified. |
+| Shahidullah | Member | Bahria, BSCS | FAQ chatbot group contribution | AI Email Assistant Prototype | `week2/src/modules/email_assistant/` | Submitted | 2026-07-19 | Developed rule-based email categorizer with Gemini draft fallback. PR #9 merged and verified. |
+| Ali Ammar Haider | Member | COMSATS University Islamabad, Business Data Analytics | FAQ chatbot group contribution | AI Report Generator Prototype | `week2/src/modules/report_generator/` | Submitted | 2026-07-19 | Completed PDF report and chart generator engine. PR #7 merged and verified. |
+| Abdul Haseeb | Member | COMSATS University Islamabad, Computer Science | FAQ chatbot group contribution | Resume Screening Prototype | `week2/src/modules/resume_screening/` | No response | 2026-07-19 | No PR or code submission received for Week 2. |
+| Hammad Abbas | Member | Agriculture University of Peshawar, Computer Science | FAQ chatbot group contribution | OCR / Document Processing Prototype | `week2/src/modules/ocr_document/` | No response | 2026-07-19 | No PR or code submission received for Week 2. |
+| Ali Zaib | Member | COMSATS Islamabad, BS Artificial Intelligence | FAQ chatbot group contribution | Predictive Analytics Mini-Study | `week2/src/modules/predictive_analytics/` | No response | 2026-07-19 | No PR or code submission received for Week 2. |
+| Malik Sudais | Member | Sarhad University of Science and Information Technology Peshawar, Software Engineering | FAQ chatbot group contribution | Invoice Automation Prototype | Confirm module ownership | Not active | 2026-07-19 | Not active for Week 2. Team leadership will review whether to add him to the team in Week 3. |
 
 ## Week 2 Deliverable Tracker
 
+> [!NOTE]
+> Detailed deliverable submissions (including screenshots, video recordings, and progress reports) are tracked in the shared Google Sheet: [SafeX Week 2 Tracker](https://docs.google.com/spreadsheets/d/1KySlQDSuPAtdBWXqFlEKz8NFvk0yfzs6KrTVqTZ5AaQ/edit?gid=800509207#gid=800509207).
+
 | Member | Source Code | Documentation | Screenshots / Recording | GitHub Ready | Working Demo | Progress Report | Explanation Video | Follow-up Needed |
 |---|---|---|---|---|---|---|---|---|
-| Arsalan Qasim | Received | Pending | Pending | Received | Received | Pending | Pending | Manual screenshot/recording and explanation video still need to be captured. |
-| MUHAMMAD WASIM | Pending | Pending | Pending | Pending | Pending | Pending | Pending | Ask for attendance module update. |
-| Muhammad Faozan Mujtaba | Pending verification | Pending verification | Pending verification | Pending verification | Pending verification | Pending verification | Pending verification | Verify HR module completion evidence. |
-| Shahidullah | Pending verification | Pending verification | Pending verification | Pending verification | Pending verification | Pending verification | Pending verification | Verify email assistant completion evidence. |
-| Ali Ammar Haider | Pending verification | Pending verification | Pending verification | Pending verification | Pending verification | Pending verification | Pending verification | Verify report generator completion evidence. |
-| Abdul Haseeb | Pending | Pending | Pending | Pending | Pending | Pending | Pending | Ask for resume screening update. |
-| Hammad Abbas | Pending | Pending | Pending | Pending | Pending | Pending | Pending | Ask for OCR module update. |
-| Ali Zaib | Pending | Pending | Pending | Pending | Pending | Pending | Pending | Ask for predictive analytics update. |
-| Malik Sudais | Pending | Pending | Pending | Pending | Pending | Pending | Pending | Confirm assignment and target module. |
+| Arsalan Qasim | Received | Received | Tracked in Sheet | Received | Received | Tracked in Sheet | Tracked in Sheet | None. |
+| MUHAMMAD WASIM | Missing | Missing | Missing | Missing | Missing | Missing | Missing | Followed up on 2026-07-19 regarding missing code. |
+| Muhammad Faozan Mujtaba | Received | Received | Tracked in Sheet | Received | Received | Tracked in Sheet | Tracked in Sheet | None. |
+| Shahidullah | Received | Received | Tracked in Sheet | Received | Received | Tracked in Sheet | Tracked in Sheet | None. |
+| Ali Ammar Haider | Received | Received | Tracked in Sheet | Received | Received | Tracked in Sheet | Tracked in Sheet | None. |
+| Abdul Haseeb | Missing | Missing | Missing | Missing | Missing | Missing | Missing | Followed up on 2026-07-19 regarding missing code. |
+| Hammad Abbas | Missing | Missing | Missing | Missing | Missing | Missing | Missing | Followed up on 2026-07-19 regarding missing code. |
+| Ali Zaib | Missing | Missing | Missing | Missing | Missing | Missing | Missing | Followed up on 2026-07-19 regarding missing code. |
+| Malik Sudais | N/A | N/A | N/A | N/A | N/A | N/A | N/A | None (Not yet added to team). |
 
 ## Non-Response Tracking
 
@@ -46,11 +49,11 @@ Use this section when a member has not replied or submitted a usable update.
 
 | Member | First Follow-up Date | Second Follow-up Date | Status | Required Action |
 |---|---|---|---|---|
-| MUHAMMAD WASIM | TBD | TBD | Not started | Request attendance prototype status and evidence. |
-| Abdul Haseeb | TBD | TBD | Not started | Request resume screening prototype status and evidence. |
-| Hammad Abbas | TBD | TBD | Not started | Request OCR prototype status and evidence. |
-| Ali Zaib | TBD | TBD | Not started | Request predictive analytics prototype status and evidence. |
-| Malik Sudais | TBD | TBD | Needs clarification | Confirm whether he owns a separate invoice task or shares the existing invoice module. |
+| MUHAMMAD WASIM | 2026-07-19 | TBD | No response | Requested attendance prototype status and evidence. |
+| Abdul Haseeb | 2026-07-19 | TBD | No response | Requested resume screening prototype status and evidence. |
+| Hammad Abbas | 2026-07-19 | TBD | No response | Requested OCR prototype status and evidence. |
+| Ali Zaib | 2026-07-19 | TBD | No response | Requested predictive analytics prototype status and evidence. |
+| Malik Sudais | N/A | N/A | Not active | Review team addition in Week 3. |
 
 ## Update Protocol
 
