@@ -43,17 +43,45 @@ This file tracks Group 54 members, assignments, module ownership, and progress. 
 | Ali Zaib | Missing | Missing | Missing | Missing | Missing | Missing | Missing | Followed up on 2026-07-19 regarding missing code. |
 | Malik Sudais | N/A | N/A | N/A | N/A | N/A | N/A | N/A | None (Not yet added to team). |
 
+## Week 3 Member Assignments
+
+| Member | Role | Week 3 Assignment | Module Folder | Current Status | Last Known Update | Notes |
+|---|---|---|---|---|---|---|
+| Arsalan Qasim | Group Leader | AI Customer Support Chatbot | `week3/src/modules/customer_support_chatbot/` | Submitted | 2026-07-23 | Submission-ready chatbot with intent matching, accuracy benchmarks, and escalation rules. |
+| MUHAMMAD WASIM | Member | AI Email Automation & Auto-Reply | `week3/src/modules/email_auto_reply/` | In progress | 2026-07-23 | Module scaffolding & task assignment ready. |
+| Muhammad Faozan Mujtaba | Member | AI Meeting Summarizer & Action-Item Extractor | `week3/src/modules/meeting_summarizer/` | In progress | 2026-07-23 | Module scaffolding & task assignment ready. |
+| Shahidullah | Member | Automatic Report Generation Agent | `week3/src/modules/report_generation_agent/` | In progress | 2026-07-23 | Module scaffolding & task assignment ready. |
+| Ali Ammar Haider | Member | AI Social Media Scheduler & Caption Generator | `week3/src/modules/social_media_scheduler/` | In progress | 2026-07-23 | Module scaffolding & task assignment ready. |
+| Abdul Haseeb | Member | AI Lead Qualification & Sales Assistant | `week3/src/modules/lead_qualification/` | In progress | 2026-07-23 | Module scaffolding & task assignment ready. |
+| Hammad Abbas | Member | Resume Screening & Interview Assistant | `week3/src/modules/resume_interview_assistant/` | In progress | 2026-07-23 | Module scaffolding & task assignment ready. |
+| Ali Zaib | Member | Document Analysis & Knowledge Assistant (RAG) | `week3/src/modules/doc_knowledge_assistant/` | In progress | 2026-07-23 | Module scaffolding & task assignment ready. |
+| Malik Sudais | Member | Invoice / Proposal Generator Agent | `week3/src/modules/proposal_invoice_generator/` | In progress | 2026-07-23 | Module scaffolding & task assignment ready. |
+
+## Week 3 Deliverable Tracker
+
+| Member | Source Code | Documentation | Screenshots / Recording | GitHub Ready | Working Demo | Progress Report | Explanation Video | Follow-up Needed |
+|---|---|---|---|---|---|---|---|---|
+| Arsalan Qasim | Received | Received | Received | Received | Received | Received | Tracked in Sheet | None. |
+| MUHAMMAD WASIM | Pending | Pending | Pending | Pending | Pending | Pending | Pending | Module assigned. |
+| Muhammad Faozan Mujtaba | Pending | Pending | Pending | Pending | Pending | Pending | Pending | Module assigned. |
+| Shahidullah | Pending | Pending | Pending | Pending | Pending | Pending | Pending | Module assigned. |
+| Ali Ammar Haider | Pending | Pending | Pending | Pending | Pending | Pending | Pending | Module assigned. |
+| Abdul Haseeb | Pending | Pending | Pending | Pending | Pending | Pending | Pending | Module assigned. |
+| Hammad Abbas | Pending | Pending | Pending | Pending | Pending | Pending | Pending | Module assigned. |
+| Ali Zaib | Pending | Pending | Pending | Pending | Pending | Pending | Pending | Module assigned. |
+| Malik Sudais | Pending | Pending | Pending | Pending | Pending | Pending | Pending | Module assigned. |
+
 ## Non-Response Tracking
 
 Use this section when a member has not replied or submitted a usable update.
 
 | Member | First Follow-up Date | Second Follow-up Date | Status | Required Action |
 |---|---|---|---|---|
-| MUHAMMAD WASIM | 2026-07-19 | TBD | No response | Requested attendance prototype status and evidence. |
-| Abdul Haseeb | 2026-07-19 | TBD | No response | Requested resume screening prototype status and evidence. |
-| Hammad Abbas | 2026-07-19 | TBD | No response | Requested OCR prototype status and evidence. |
-| Ali Zaib | 2026-07-19 | TBD | No response | Requested predictive analytics prototype status and evidence. |
-| Malik Sudais | N/A | N/A | Not active | Review team addition in Week 3. |
+| MUHAMMAD WASIM | 2026-07-19 | TBD | In progress | Week 3 task assigned. |
+| Abdul Haseeb | 2026-07-19 | TBD | In progress | Week 3 task assigned. |
+| Hammad Abbas | 2026-07-19 | TBD | In progress | Week 3 task assigned. |
+| Ali Zaib | 2026-07-19 | TBD | In progress | Week 3 task assigned. |
+| Malik Sudais | N/A | N/A | In progress | Assigned Invoice/Proposal Generator Agent for Week 3. |
 
 ## Update Protocol
 
@@ -64,3 +92,4 @@ When updating this file:
 3. Add short, factual notes.
 4. Do not add private contact details.
 5. Move completed deliverables from `Pending` to `Received` or `Verified`.
+

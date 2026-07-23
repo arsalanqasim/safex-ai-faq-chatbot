@@ -156,6 +156,62 @@ When a member is not responding:
 3. Record the exact deliverables missing.
 4. Keep notes factual and professional.
 
+## Week 3 - AI Agent Automation Proposal Suite
+
+### Original Task
+
+Each member designs, builds, and documents an AI agent prototype for a specific business automation domain and target company.
+
+Common deliverables:
+
+- Working prototype (script or hosted demo).
+- Prompt template / architecture documentation & diagrams.
+- Sample dataset / inputs and before-after outputs.
+- Weekly Progress Report (PDF) & Daily Work Log.
+- Demo Video (5-10 min, HD, face visible).
+- Presentation Slides & Problems Encountered writeup.
+
+### Group Direction
+
+Group 54 organized Week 3 as an AI Agent Automation Proposal Suite under `week3/`.
+The shared Streamlit app routes to member-owned modules, providing clean isolation and consistent UI styling.
+
+### Module Assignments
+
+| Member | Module Key | Assigned Project | Scope Summary |
+|---|---|---|---|
+| Arsalan Qasim | `customer_support_chatbot` | AI Customer Support Chatbot | Map 12+ queries, build intent classifier + escalation rules, 10+ query test benchmark with accuracy score. |
+| MUHAMMAD WASIM | `email_auto_reply` | AI Email Automation & Auto-Reply | Collect 15-20 queries, prompt templates, draft reply generation, human-review step. |
+| Muhammad Faozan Mujtaba | `meeting_summarizer` | AI Meeting Summarizer & Action-Item Extractor | Process meeting transcripts, extract summary, decisions, action items with owners & deadlines. |
+| Shahidullah | `report_generation_agent` | Automatic Report Generation Agent | Read operational CSVs, generate narrative written report using LLM + embedded charts. |
+| Ali Ammar Haider | `social_media_scheduler` | AI Social Media Scheduler & Caption Generator | 7-day content calendar, LLM caption generator, Buffer/Meta API integration proposal. |
+| Abdul Haseeb | `lead_qualification` | AI Lead Qualification & Sales Assistant | 5-8 scoring criteria, LLM rubric engine, qualification score + next action for 10+ leads. |
+| Hammad Abbas | `resume_interview_assistant` | Resume Screening & Interview Assistant | Screen 5-8 resumes against job description, fit explanation, 5 tailored interview questions. |
+| Ali Zaib | `doc_knowledge_assistant` | Document Knowledge Assistant (RAG) | RAG pipeline over policy docs, vector similarity, log accuracy across 10+ questions. |
+| Malik Sudais | `proposal_invoice_generator` | Invoice / Proposal Generator Agent | Structured input template, LLM cover paragraph, formatted proposal & invoice packages. |
+
+### Week 3 Workspace
+
+Important files:
+
+- `week3/src/app.py`
+- `week3/src/config.py`
+- `week3/src/modules/registry.py`
+- `week3/src/modules/customer_support_chatbot/`
+- `week3/src/modules/email_auto_reply/`
+- `week3/src/modules/meeting_summarizer/`
+- `week3/src/modules/report_generation_agent/`
+- `week3/src/modules/social_media_scheduler/`
+- `week3/src/modules/lead_qualification/`
+- `week3/src/modules/resume_interview_assistant/`
+- `week3/src/modules/doc_knowledge_assistant/`
+- `week3/src/modules/proposal_invoice_generator/`
+- `week3/docs/Self_Initiative.md`
+- `week3/docs/Weekly/Week3_Status_Report.md`
+- `week3/tests/`
+
+---
+
 ## Future Weeks
 
 Add future weekly tasks below using the same structure:
@@ -168,3 +224,4 @@ Add future weekly tasks below using the same structure:
 - deliverables
 - evidence
 - final status
+

@@ -1,0 +1,11 @@
+# Python / Streamlit Gitignore for Week 3
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.streamlit/
+.env
+venv/
+env/
+outputs/
+*.log

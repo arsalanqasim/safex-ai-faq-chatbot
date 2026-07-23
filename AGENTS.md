@@ -14,6 +14,7 @@ Use this file as the common operating guide for any coding agent, including Code
 - Current structure:
   - `week1/`: SafeX FAQ chatbot prototype and case-study documentation.
   - `week2/`: Business Automation Research prototype suite with independent member modules.
+  - `week3/`: AI Agent Automation Proposal prototype suite with independent member modules.
 
 For full context, read:
 
@@ -47,6 +48,12 @@ safex/
     docs/
     tests/
   week2/
+    src/
+      app.py
+      modules/
+    docs/
+    tests/
+  week3/
     src/
       app.py
       modules/
@@ -110,7 +117,28 @@ streamlit run src/app.py
 python -m pytest
 ```
 
-## Member Modules
+## Week 3 Guide
+
+`week3/` contains the AI Agent Automation Proposal prototype suite. Each member owns a separate module under `week3/src/modules/`.
+
+Expected module shape:
+
+```text
+week3/src/modules/<module_name>/
+  __init__.py
+  engine.py
+  ui.py
+```
+
+Run from `week3/`:
+
+```bash
+pip install -r requirements.txt
+streamlit run src/app.py
+python -m pytest
+```
+
+## Week 2 Member Modules
 
 | Module | Owner | Week 2 Work |
 |---|---|---|
@@ -122,7 +150,21 @@ python -m pytest
 | `resume_screening` | Abdul Haseeb | Resume Screening Prototype |
 | `ocr_document` | Hammad Abbas | OCR / Document Processing Prototype |
 | `predictive_analytics` | Ali Zaib | Predictive Analytics Mini-Study |
-| `invoice_automation` | Malik Sudais | Invoice Automation Prototype assignment listed in source roster; confirm folder ownership before changing assignments. |
+| `invoice_automation` | Malik Sudais | Invoice Automation Prototype assignment listed in source roster. |
+
+## Week 3 Member Modules
+
+| Module | Owner | Week 3 Assignment |
+|---|---|---|
+| `customer_support_chatbot` | Arsalan Qasim | AI Customer Support Chatbot |
+| `email_auto_reply` | MUHAMMAD WASIM | AI Email Automation & Auto-Reply |
+| `meeting_summarizer` | Muhammad Faozan Mujtaba | AI Meeting Summarizer & Action-Item Extractor |
+| `report_generation_agent` | Shahidullah | Automatic Report Generation Agent |
+| `social_media_scheduler` | Ali Ammar Haider | AI Social Media Scheduler & Caption Generator |
+| `lead_qualification` | Abdul Haseeb | AI Lead Qualification & Sales Assistant |
+| `resume_interview_assistant` | Hammad Abbas | Resume Screening & Interview Assistant |
+| `doc_knowledge_assistant` | Ali Zaib | Document Analysis & Knowledge-Base Assistant |
+| `proposal_invoice_generator` | Malik Sudais | Invoice / Proposal Generator Agent |
 
 If the roster and code disagree, update `docs/team-roster.md` first with a note under open questions, then adjust code only when the requested ownership is clear.
 
